@@ -19,9 +19,6 @@ export const categories = [
       {_id:uuid(),
         genreName:"Predictions Science"
       },
-      {_id:uuid(),
-        genreName:"Saada Haq"
-      },
     ]
   },
   {
