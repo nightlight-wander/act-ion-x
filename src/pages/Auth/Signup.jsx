@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
 import axios from 'axios';
-import { useRef,useState,useEffect} from "react";
+import { useRef,useEffect} from "react";
 import { useAuth } from '../../context/AuthContext';
-import {authSubmit} from '../../utilities/authSubmit';
+// import {authSubmit} from '../../utilities/authSubmit';
 import { Header } from '../../components/Header/Header';
 
 const Signup = () => {
-    const userInputRef=useRef();
+    // const userInputRef=useRef();
     const {user,setUser}=useAuth();
     const authSubmit=(e)=>{
         e.preventDefault();
