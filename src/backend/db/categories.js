@@ -9,6 +9,7 @@ export const categories = [
   {
     _id: uuid(),
     category: "Sci-Code",
+    catImg:"https://wallpaperaccess.com/full/1886943.png",
     genre:[
       {_id:uuid(),
         genreName:"Quantas Science"
@@ -24,6 +25,7 @@ export const categories = [
   {
     _id: uuid(),
     category: "Dynamics",
+    catImg:"https://wallpapercave.com/wp/wp8901619.jpg",
     genre:[
       {_id:uuid(),
         genreName:"Contemporary Dance"
@@ -42,6 +44,7 @@ export const categories = [
   {
     _id: uuid(),
     category: "Soundscapes",
+    catImg:"https://wallpapercave.com/uwp/uwp2328396.png",
     genre:[
       {_id:uuid(),
         genreName:"Rainbow"

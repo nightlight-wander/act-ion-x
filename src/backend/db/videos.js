@@ -10,7 +10,7 @@ export const videos = [
     genreName:"Quantas Science",
     title: "Self Healing Lichtenberg Patterns Mimic Life",
     creator: "Plasma Channel",
-    thumbnail:"https://picsum.photos/id/1/200/300",
+    thumbnail:"https://hackaday.com/wp-content/uploads/2021/05/hvballs_detail.jpg?resize=400,285",
   },
   
   {
@@ -19,7 +19,7 @@ export const videos = [
     genreName:"Cyborgs Science",
     title: "Admantium Wolverine Claws",
     creator: "HackSmith Industeries",
-    thumbnail:"https://picsum.photos/id/1/200/300",
+    thumbnail:"https://i.pinimg.com/236x/74/61/2d/74612d2c7f490eb0247ea1b3b863a505--logan-wolverine-art-shows.jpg",
   },
 
   {
@@ -28,7 +28,7 @@ export const videos = [
     genreName:"Cyborgs Science",
     title: "Iron Man Repulsor",
     creator: "HackSmith Industeries",
-    thumbnail:"https://picsum.photos/id/1/200/300",
+    thumbnail:"https://www.digikey.com/-/media/MakerIO/Images/projects/2018/10/04/97cd5e51b4cd42e39986cfb27b4087f1.jpg?ts=80f0482a-4072-4b96-a2c5-b50ef52c3648",
   },
 
   {
@@ -37,16 +37,7 @@ export const videos = [
     genreName:"Cyborgs Science",
     title: "Swinging from web shooters",
     creator: "HackSmith Industeries",
-    thumbnail:"https://picsum.photos/id/1/200/300",
-  },
-
-  {
-    _id: "aF4DoCY0cNg",
-    category: "Sci-Code",
-    genreName:"Cyborgs Science",
-    title: "Admantium Wolverine Claws",
-    creator: "HackSmith Industeries",
-    thumbnail:"https://picsum.photos/id/1/200/300",
+    thumbnail:"https://theawesomer.com/photos/2020/04/spider_man_web_shooters_irl_t.jpg",
   },
 
   {
@@ -55,16 +46,16 @@ export const videos = [
     genreName:"Cyborgs Science",
     title: "Vehicle powered by wind,outruns wind",
     creator: "Xyla Foxlin",
-    thumbnail:"https://picsum.photos/id/1/200/300",
+    thumbnail:"https://pbs.twimg.com/media/E5I6ZqeWUAIMnB_?format=jpg&name=900x900",
   },
 
   {
     _id: "HeQX2HjkcNo",
     category: "Sci-Code",
-    genreName:"Predictions Science",
+    genreName:"Predictions Science", 
     title: "Math's Fundamental Law",
     creator: "Veritasium",
-    thumbnail:"https://picsum.photos/id/1/200/300",
+    thumbnail:"https://d2r55xnwy6nx47.cloudfront.net/uploads/2022/01/L-Functions_300.jpg",
   },
 
   {
@@ -73,7 +64,7 @@ export const videos = [
     genreName:"Predictions Science",
     title: "Biology an expression of field",
     creator: "Nassim Haramein",
-    thumbnail:"https://picsum.photos/id/1/200/300",
+    thumbnail:"https://wallpaperaccess.com/full/1886928.jpg",
   },
 
   {
@@ -82,7 +73,7 @@ export const videos = [
     genreName:"Predictions Science",
     title: "Connected universe ted",
     creator: "Nassim Haramein",
-    thumbnail:"https://picsum.photos/id/1/200/300",
+    thumbnail:"https://wallpaperaccess.com/full/1886954.jpg",
   },
 
   {
@@ -91,7 +82,7 @@ export const videos = [
     genreName:"Predictions Science",
     title: "Upload your mind and live forever?No!",
     creator: "Kurzgesagt",
-    thumbnail:"https://picsum.photos/id/1/200/300",
+    thumbnail:"https://wallpaperaccess.com/full/1887131.jpg",
   },
 
   {
@@ -100,7 +91,7 @@ export const videos = [
     genreName:"Quantas Science",
     title: "Accelarating towards full potential joe dispenza",
     creator: "Tom Bileyu",
-    thumbnail:"https://picsum.photos/id/1/200/300",
+    thumbnail:"https://wallpapercave.com/wp/wp6948821.jpg",
   },
 
   {
@@ -109,7 +100,7 @@ export const videos = [
     genreName:"Quantas Science",
     title: "Stay healthy until 105 steven gundry",
     creator: "Tom Bileyu",
-    thumbnail:"https://picsum.photos/id/1/200/300",
+    thumbnail:"https://wallpaperaccess.com/full/1886941.jpg",
   },
 
   {
@@ -118,7 +109,7 @@ export const videos = [
     genreName:"Contemporary Dance",
     title: "Falling",
     creator: "CreDance",
-    thumbnail:"https://picsum.photos/id/1/200/300",
+    thumbnail:"https://wallpapercave.com/wp/wp2952781.jpg",
   },
 
   {
@@ -127,7 +118,7 @@ export const videos = [
     genreName:"Contemporary Dance",
     title: "Bruises",
     creator: "Kaycee Rice",
-    thumbnail:"https://picsum.photos/id/1/200/300",
+    thumbnail:"https://wallpapercave.com/wp/wp2952876.jpg",
   },
 
   {
@@ -136,7 +127,7 @@ export const videos = [
     genreName:"Contemporary Dance",
     title: "Lapsley",
     creator: "Tim Milgram",
-    thumbnail:"https://picsum.photos/id/1/200/300",
+    thumbnail:"https://media.istockphoto.com/photos/an-athletic-woman-jumping-up-to-strike-a-fierce-pose-picture-id146955338?k=20&m=146955338&s=612x612&w=0&h=tfUGrjYJXLkBNKxmNs1kLQ6BTc4QW-MgK18Ip-_qMm0=",
   },
 
   {
@@ -145,7 +136,7 @@ export const videos = [
     genreName:"Movement Techniques",
     title: "Shuffle Dance",
     creator: "Prokopik Yuri",
-    thumbnail:"https://picsum.photos/id/1/200/300",
+    thumbnail:"https://wallpapercave.com/wp/wp2952837.jpg",
   },
 
   {
@@ -154,7 +145,7 @@ export const videos = [
     genreName:"Movement Techniques",
     title: "Learn Flare",
     creator: "Yurii",
-    thumbnail:"https://picsum.photos/id/1/200/300",
+    thumbnail:"https://wallpapercave.com/wp/wp8558034.jpg",
   },
 
 ];

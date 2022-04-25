@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Link,useNavigate } from "react-router-dom";
 import { Header } from '../../components/Header/Header';
 import { useAuth } from '../../context/AuthContext';
-import {authSubmit} from '../../utilities/authSubmit';
+// import {authSubmit} from '../../utilities/authSubmit';
 import "../../styles/spaces.css";
 import "../../styles/common.css";
 import "./Auth.css";
@@ -12,7 +12,17 @@ const Login = () => {
     const {user,setUser}=useAuth();
     // console.log(user)
     const navigate=useNavigate(); //useNavigate hook that returns navigate function
-    
+    const authSubmit=(e)=>{
+        e.preventDefault();
+        const newUserFormData=new FormData(e.target);
+        const newUser=Object.fromEntries(newUserFormData.entries());
+        if(newUser.email&&newUser.password&&newUser.userName!==""){
+            setUser(()=>newUser);
+        }else{
+            setUser(()=>"");
+        }
+        
+    };
     const getUserData=async(userObj)=>{
         try{
             const response=await axios.post (`/api/auth/login`,{

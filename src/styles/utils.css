@@ -1,10 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
 :root {
     font-family: 'Poppins', sans-serif;
     font-size: 62.5%;
     --blue-light: #8abdff;
     --purple: #5b0eeb;
     --primary-purple: #5b0eeb;
+    --purple-main:rgb(162, 102, 246);
+    --purple-main-1:rgb(162, 102, 246,50%);
     /* --secondary:#394fe2;
     --secondary-light:#054ab1; */
   
@@ -47,7 +49,9 @@
   
     --tomatoOrange:rgb(255,99,71);
     --coralOrange:rgb(255,127,80);
-    --yellowGold:rgb(255,215,0);
+    --yellowGold:rgb(255, 215, 0);
+    --yellowGold:rgb(255, 215, 0);
+    --yellowGold-tp:rgb(255, 215, 0,50%);
   
   
     --pink1:#dbdcd7;
@@ -66,5 +70,16 @@
       -1px -1px 12px #141120;
     --box-shadow-primary-in: inset -50px 50px 100px #0b0a10,
       inset 50px -50px 100px #2d2a3e;
+
+      --background-text: -webkit-linear-gradient(#e7627d,#3d1635);
+      --background-clip-text:text ;
   
   }
+
+  .text-render{
+    background: var(--background-text);
+    background-clip: var(--background-clip-text);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color: transparent;
+
+  } 

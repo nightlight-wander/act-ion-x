@@ -5,6 +5,7 @@ import "./index.css";
 import App from "./App";
 import { makeServer } from "./server";
 import {AuthProvider} from "./context/AuthContext";
+import { VideosProvider } from "./context/VideosContest";
 
 // Call make Server
 makeServer();
@@ -13,7 +14,9 @@ ReactDOM.render(
   <React.StrictMode>
     <AuthProvider>
       <Router>
-        <App />
+        <VideosProvider>
+          <App />
+        </VideosProvider>
       </Router>
     </AuthProvider>
   </React.StrictMode>,

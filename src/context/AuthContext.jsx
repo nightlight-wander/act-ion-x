@@ -1,5 +1,4 @@
-import {useContext,createContext} from "react";
-import {useState} from "react";
+import {useContext,createContext,useState} from "react";
 
 const AuthContext=createContext();
 const useAuth=()=>useContext(AuthContext);

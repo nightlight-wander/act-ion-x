@@ -1,4 +1,4 @@
-:root{
+/* :root{
     --padding-bottom-1rem:1rem;
     --padding-bottom-2rem:2rem;
     --padding-bottom-3rem:3rem;
@@ -114,7 +114,6 @@
 
 
 
-/* For margin paddings in the range of 0.125 from 0.125 to 1 */
 .sp1xs-mg-t,.pd1xs-mg-t,.sp1xs-mg-b,.pd1xs-mg-b,.sp1xs-mg-tobo,.pd1xs-mg-tobo,.sp1xs-mg-lr,.pd1xs-mg-lr,.sp1xs-mg-l,.pd1xs-mg-l,.sp1xs-mg-r,.pd1xs-mg-r{
     margin: var(--spacer);
 }
@@ -143,4 +142,4 @@
 .sp0-mg-pd{
     margin: var(--spacer0);
     padding: var(--spacer0);
-}
+} */
