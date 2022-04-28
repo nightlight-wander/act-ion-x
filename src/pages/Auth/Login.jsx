@@ -21,29 +21,33 @@ const Login = () => {
         }
         
     };
-    const getUserData=async(userObj)=>{
-        try{
-            const response=await axios.post (`/api/auth/login`,{
-                email:userObj.email,
-                password:userObj.password,
-            });
-            console.log(response)
-            if(response.status===200){
-                localStorage.setItem("user",JSON.stringify(response.data.foundUser));
-            }
-            else{
-                navigate("/");
-            }
-        }catch(error){
-            console.log(error); 
-        }
-    }
+    // const getUserData=
     useEffect(()=>{
-        getUserData(user);
-    },[user,getUserData])
+        (
+            async(userObj)=>{
+                try{
+                    const response=await axios.post (`/api/auth/login`,{
+                        email:userObj.email,
+                        password:userObj.password,
+                    });
+                    console.log(response)
+                    if(response.status===200){
+                        localStorage.setItem("user",JSON.stringify(response.data.foundUser));
+                    }
+                    else{
+                        navigate("/");
+                    }
+                }catch(error){
+                    console.log(error); 
+                }
+            }
+        )()
+    },[user])
+
     const guestLogin=()=>{
         setUser(()=>({email: 'flyflow@gmail.com', password: 'paperplanes12'}));
     }
+    
     return (
         <div>
             <Header />

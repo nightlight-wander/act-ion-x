@@ -19,8 +19,10 @@ const VideoListing = () => {
               return curVideoObj.category===catObj.category
             })
           })
+          // eslint-disable-next-line
           setCategories(()=>categories);
           const videosByGenre=[...videosByCat[category]].filter(videoObj=>selectGenre.includes(videoObj.genreName))
+          // eslint-disable-next-line
           isGenres===true?setVideos(()=>videosByGenre):setVideos(()=>videosByCat[category]);
         }catch(error){
           console.log(error);
