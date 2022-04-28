@@ -14,12 +14,13 @@ const Home = () => {
     (async()=>{
         try{
           const { data: { categories } } = await axios.get("/api/categories");
-          // eslint-disable-next-line
+         
           setCategories(()=>categories);
         }catch(error){
           console.log(error);
         }
     })()
+    // eslint-disable-next-line
 },[categories])
 
   return (
