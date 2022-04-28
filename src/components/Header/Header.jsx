@@ -1,30 +1,55 @@
 import React from 'react';
-// import "./Header.css";
+import HeaderStyles from "./Header.module.css";
 import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
-    <header className="header ">
-      <div className="logo-head-comp flex-vCenter">
-        <Link to="/" className="logo-name-comp">ACT-IONS</Link>
+    <header className={`${HeaderStyles.header}`}>
+      <div className={`${HeaderStyles["logo-head"]} flex-vCenter`} >
+        <Link to="/" className={`${HeaderStyles["logo-name"]}`}>ACT-IONS</Link>
       </div>
-      <input type="checkbox" id="nav-toggle" className="nav-toggle" />
+      <input type="checkbox" id="nav-toggle" className={`${HeaderStyles["nav-toggle"]}`} />
 
-      <label htmlFor="nav-toggle" className="nav-toggle-label">
+      <label htmlFor="nav-toggle" className={`${HeaderStyles["nav-toggle-label"]}`}>
         <span></span>
       </label>
 
-      <div className="search-bar">
-        <input type="text" className="search-input" placeholder="Search" aria-label="search" />
-        <button className="submit-btn"><span className="search-icon material-icons material-icons-outlined search-submit">
+      <div className={`${HeaderStyles["search-bar"]}`}>
+        <input type="text" className={`${HeaderStyles["search-input"]}`} placeholder="Search" aria-label="search" />
+        <button className={`${HeaderStyles["submit-btn"]}`}><span className=" material-icons material-icons-outlined search-submit">
           search</span></button>
       </div>
-      <div className="actions-head flex-vCenter">
-        <Link to="/login" className="user flex-col flex-vCenter">
+      <div className={`${HeaderStyles["video-actions"]} flex-vCenter`}>
+        <Link to="/playlist" className={`flex-col flex-vCenter`}>
+          <span class="material-icons">
+            playlist_add
+          </span>
+          <span className={`${HeaderStyles["video-actions-title"]}`}>Playlist</span>
+        </Link>
+        <Link to="/playlist" className={`flex-col flex-vCenter`}>
+          <span class="material-icons">
+            watch_later
+          </span>
+          <span className={`${HeaderStyles["video-actions-title"]}`}>Watch Later</span>
+        </Link>
+
+        <Link to="/playlist" className={`flex-col flex-vCenter`}>
+          <span class=" material-icons material-icons-outlined">
+            history
+          </span>
+          <span className={`${HeaderStyles["video-actions-title"]}`}>History</span>
+        </Link>
+        <Link to="/playlist" className={`flex-col flex-vCenter`}>
+          <span class="material-icons material-icons-outlined">
+            favorite_border
+          </span>
+          <span className={`${HeaderStyles["video-actions-title"]}`}>Liked</span>
+        </Link>
+        <Link to="/login" className={`flex-col flex-vCenter`}>
           <span class="material-icons">
             perm_identity
           </span>
-          <span className="actions-title">Profile</span>
+          <span className={`${HeaderStyles["video-actions-title"]}`}>Profile</span>
         </Link>
       </div>
     </header>

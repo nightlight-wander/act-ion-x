@@ -1,0 +1,26 @@
+.actionsCat{
+    flex-grow: 1;
+    padding: 2rem 0; 
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    gap:10rem;
+    z-index:10;
+    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgb(162, 102, 246) 0%, rgb(203, 159, 249) 90% );
+    
+}
+
+.actionsCat .actions{
+    color: var(--yellowGold);
+}
+
+.actionsCat .actions:hover{
+  
+    color:var(--pink5);
+}
+
+@media only screen and (max-width:640px){
+    .actionsCat{
+        gap: 4rem;
+    }
+}

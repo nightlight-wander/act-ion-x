@@ -1,55 +1,67 @@
 import HomeStyles from "./Home.module.css";
-// import {Link} from "react-router-dom";
-import { useEffect,useState } from "react";
-import axios from "axios";
 import { useVideos } from "../../context/VideosContest";
-// import { getVideosData } from "../../utilities/getVideosData";
+import { BottomNav } from "../../components/BottomNav/BottomNav";
+import { GenreSlider } from "../../components/GenreSlider/GenreSlider";
+import axios from "axios";
+import { useEffect } from "react";
+
 
 
 const Home = () => {
-  const { categories, setCategories, genres, setGenres,category,setCategory,videos,setVideos,selectGenre,setSelectGenre} = useVideos();
+  const { categories,setCategories} = useVideos();
 
-const fetchVideosData=async()=>{
-  try{
-    const { data: { categories } } = await axios.get("/api/categories");
-    const {data:{videos}}=await axios.get("/api/videos");
-    const specificVideos=categories.map((catObj)=>{
-      return videos.filter((curVideoObj)=>{
-        return curVideoObj.category===catObj.category
-      })
-    })
-    console.log(specificVideos[category]);
-    setCategories(()=>categories);
-    setVideos(()=>specificVideos[category]);
-  }catch(error){
-    console.log(error);
-  }
-}
+  useEffect(()=>{
+    (async()=>{
+        try{
+          const { data: { categories } } = await axios.get("/api/categories");
+          setCategories(()=>categories);
+        }catch(error){
+          console.log(error);
+        }
+    })()
+},[categories])
+  
 
-useEffect(()=>{
-  fetchVideosData();
-},[category])
+  // const fetchVideosData=async()=>{
+  //   try{
+  //     const { data: { categories } } = await axios.get("/api/categories");
+  //     const {data:{videos}}=await axios.get("/api/videos");
+  //     const specificVideos=categories.map((catObj)=>{
+  //       return videos.filter((curVideoObj)=>{
+  //         return curVideoObj.category===catObj.category
+  //       })
+  //     })
+  //     console.log(specificVideos[category]);
+  //     setCategories(()=>categories);
+  //     setVideos(()=>specificVideos[category]);
+  //   }catch(error){
+  //     console.log(error);
+  //   }
+  // }
+  // useEffect(()=>{
+  //   // fetchVideosData();
+  // },[category])
 
 
 
-// console.log(videos);
+  // console.log(videos);
 
 
-  const catGenreHandler = (selectedCat) => {
-    const genresArray = categories.reduce((curTotal, curObj) => {
-      return curObj.category === categories[Number(selectedCat)].category ? curObj.genre : curTotal
-    },[])
-    console.log(genres)
-    setGenres(() => [...genresArray]);
-    // const catFound=categories.find(categoryItem=>categoryItem._id===selectedCat._id)
-    setCategory(()=>selectedCat);
-  }
+  // const catGenreHandler = (selectedCat) => {
+  //   const genresArray = categories.reduce((curTotal, curObj) => {
+  //     return curObj.category === categories[Number(selectedCat)].category ? curObj.genre : curTotal
+  //   },[])
+  //   console.log(genres)
+  //   setGenres(() => [...genresArray]);
+  //   // const catFound=categories.find(categoryItem=>categoryItem._id===selectedCat._id)
+  //   setCategory(()=>selectedCat);
+  // }
 
-  const genreHandler=(genreObj)=>{
-    const selectedGenres=genres.reduce((curTotal,curObj)=>curObj.genreName===genreObj.genreName?genreObj:curTotal,[]);
-    setSelectGenre(()=>[...selectGenre,selectedGenres]);
-    console.log(selectGenre);
-  }
+  // const genreHandler=(genreObj)=>{
+  //   const selectedGenres=genres.reduce((curTotal,curObj)=>curObj.genreName===genreObj.genreName?genreObj:curTotal,[]);
+  //   setSelectGenre(()=>[...selectGenre,selectedGenres]);
+  //   console.log(selectGenre);
+  // }
 
   // const videosByGenre=()=>{
   //   setVideos(()=>videos.filter(videoObj.genreName.includes(selectGenre.genreName)));
@@ -77,47 +89,8 @@ useEffect(()=>{
         }
         )}
       </section>
-
-      <div className={`${HomeStyles.genreSlider} flex-center`}>
-        {/* <div key={genreObj._id} className={`${HomeStyles.genreNamesWrapper}`}> */}
-        {/* </div> */}
-      <button  className={`${HomeStyles.genreBtn} ${HomeStyles.genreAllBtn}`}>All</button>
-        {genres.map(genreObj => {
-          return <button className={`${HomeStyles.genreBtn}`} onClick={()=>genreHandler(genreObj)}>{genreObj.genreName}</button>
-          
-        })}
-      </div>
-
-      <nav className={`${HomeStyles.actionsCat} flex-center`}>
-        <button className={`${HomeStyles.actions} flex-col flex-vCenter`} >
-          <span className="material-icons">
-            restart_alt
-          </span>
-          <span className={`${HomeStyles.actionsName}`} >Home</span>
-        </button>
-        
-        <button className={`${HomeStyles.actions} flex-col flex-vCenter`} onClick={() => catGenreHandler(0)}>
-          <span className="material-icons">
-            science
-          </span>
-          Sci-Code
-        </button>
-
-        <button className={`${HomeStyles.actions} flex-col flex-vCenter`} onClick={() => catGenreHandler(1)}>
-          <span className="material-icons">
-            sports_soccer
-          </span>
-          Dynamics
-        </button>
-
-        <button className={`${HomeStyles.actions} flex-col flex-vCenter`} onClick={() => catGenreHandler(2)}>
-          <span className="material-icons">
-            emoji_nature
-          </span>
-          Soundscapes
-        </button>
-      </nav>
-
+      <GenreSlider/>
+      <BottomNav />
     </div>
   )
 }

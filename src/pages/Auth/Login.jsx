@@ -1,16 +1,14 @@
-import {useEffect,useState} from 'react';
+import {useEffect} from 'react';
 import axios from 'axios';
 import { Link,useNavigate } from "react-router-dom";
 import { Header } from '../../components/Header/Header';
 import { useAuth } from '../../context/AuthContext';
-// import {authSubmit} from '../../utilities/authSubmit';
 import "../../styles/spaces.css";
 import "../../styles/common.css";
 import "./Auth.css";
 
 const Login = () => {
     const {user,setUser}=useAuth();
-    // console.log(user)
     const navigate=useNavigate(); //useNavigate hook that returns navigate function
     const authSubmit=(e)=>{
         e.preventDefault();
@@ -37,12 +35,12 @@ const Login = () => {
                 navigate("/");
             }
         }catch(error){
-            console.log(error);
+            console.log(error); 
         }
     }
     useEffect(()=>{
         getUserData(user);
-    },[user])
+    },[user,getUserData])
     const guestLogin=()=>{
         setUser(()=>({email: 'flyflow@gmail.com', password: 'paperplanes12'}));
     }
