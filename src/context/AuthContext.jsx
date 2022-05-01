@@ -4,9 +4,26 @@ const AuthContext=createContext();
 const useAuth=()=>useContext(AuthContext);
 
 const AuthProvider=({children})=>{
-    const [user,setUser]=useState({});
+    const readToken=()=>{
+        let val;
+        if (val!==""){
+            return localStorage.getItem("eToken")
+        }else{
+            return ""
+        }
+    }
+    const readUser=()=>{
+        let val;
+        if (val!=={}){
+            return JSON.parse(localStorage.getItem("user"))
+        }else{
+            return {}
+        }
+    }
+    const [user,setUser]=useState(readUser);
+    const [eToken,seteToken]=useState(readToken);
     return(
-        <AuthContext.Provider value={{user,setUser}}>
+        <AuthContext.Provider value={{user,setUser,eToken,seteToken}}>
             {children}
         </AuthContext.Provider>
     )
