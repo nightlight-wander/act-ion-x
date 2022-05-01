@@ -13,11 +13,14 @@ const Tabs = ({ children }) => {
                 {children.map((child) => <li className={`${TabStyles.tab} ${child.props.label === activeTab? TabStyles.active: "" }`} key={child.props.label} onClick={() => tabHandler(child.props.label)}>{child.props.label}</li>)}
             </ul>
             {children.map((child) => {
-                if (child.props.label === activeTab)
-                    return (<div key={child.props.label} className={`${TabStyles.tabsContent}`}>{child.props.children}</div>)
+                // eslint-disable-next-line
+                if (child.props.label === activeTab) 
+                return (
+                <div key={child.props.label} className={`${TabStyles.tabsContent}`}>{child.props.children}</div>
+                );
             })}
         </div>
     )
 }
 
-export { Tabs };
+export { Tabs }; 
