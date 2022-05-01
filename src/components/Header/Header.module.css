@@ -1,0 +1,222 @@
+
+.header {
+    z-index: 10;
+    height: 6rem;
+    display: flex;
+    position: relative;
+}
+
+.logo-name {
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: var(--purple-main);
+    margin: 2rem 0 0.5rem 0;
+}
+
+.logo-name:hover {
+    color: var(--yellowGold);
+}
+
+.logo-head{
+    background: none;
+    margin-left: 4rem;
+    display: flex;
+    align-items: center;
+}
+
+.search-bar {
+    display: flex;
+    --size: 35px;
+    border: 2px solid var(--purple-main);
+    display: flex;
+    align-items: center;
+    height: var(--size);
+    padding: 0.2rem;
+    position: relative;
+    transition: width 300ms ease-in-out;
+    overflow: hidden;
+    margin: 1.5rem 2rem 0.5rem 20rem;
+    width: 20%;
+    border-radius: 10rem;
+}
+
+.search-input {
+    height: 100%;
+    font-size: 1.6rem;
+    padding: 0 0.5em;
+    border: 0;
+    background: transparent;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    /* opacity:0; */
+    /* cursor: pointer; */
+    outline: 0;
+}
+
+
+/* .search-input:focus{
+    outline: 0;
+    opacity: 1;
+    cursor: initial;
+} */
+
+/* .search-bar:focus-within{
+    width:100%;
+} */
+
+.search-bar .submit-btn {
+    color: var(--yellowGold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    width: calc(var(--size));
+    height: calc(var(--size));
+    margin-left: auto;
+    background-color: var(--purple-main);
+    border: 1px solid var(--purple-main);
+
+}
+
+/* .search-bar .submit-btn .search-icon{
+  color:var(--pink8)
+} */
+
+
+.nav-toggle  {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    min-width: 4rem;
+    min-height: 4rem;
+    background-color: var(--sky-blue);
+    display: none;
+}
+
+.video-actions{
+    column-gap: 3rem;
+    margin-left: 8rem;
+    margin-top: 1.5rem;
+}
+.video-actions a{
+    color: var(--purple-main);
+}
+
+/* responsive navigation*/
+
+@media only screen and (max-width:1300px) {
+
+    .search-bar {
+        width: var(--size);
+        margin:2rem 8rem 2rem  auto;
+    }
+   
+    .search-input {
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    .search-input:focus {
+        outline: 0;
+        opacity: 1;
+        cursor: initial;
+    }
+
+    .search-bar:focus-within {
+        width: 45%;
+    }
+
+    .header {
+        width: 100%;
+    }
+
+    .nav-toggle  {
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+        min-width: 4rem;
+        min-height: 4rem;
+        background-color: var(--sky-blue);
+    }
+    
+    .nav-toggle-label {
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+        height: 4rem;
+        display: flex;
+        align-items: center;
+        min-width: 4rem;
+        background-color: var(--purple-main-1);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .nav-toggle-label span::before,
+    .nav-toggle-label span::after {
+        content: '';
+        position: absolute;
+    }
+    
+    .nav-toggle-label span,
+    .nav-toggle-label span::before,
+    .nav-toggle-label span::after {
+        background-color: var(--purple-main);
+        display: block;
+        height: 2px;
+        width: 2em;
+        border-radius: 2px;
+        position: relative;
+    }
+    
+    .nav-toggle-label span::before {
+        bottom: 7px;
+    }
+    
+    .nav-toggle-label span::after {
+        top: 7px;
+    }
+    
+
+    .video-actions{
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        top: 8rem;
+        font-size: 1.4rem;
+        text-transform: uppercase;
+        display: flex;
+        gap: 1em;
+        right: 0;
+        background-color: var(--sky-blue1);
+    }
+    
+    
+    
+    .video-actions .video-actions-title{
+        padding: 1rem;
+        font-size: 1.4rem;
+    }
+    
+    .video-actions{
+        text-decoration: none;
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        opacity: 0;
+        transition: opacity 150ms ease-in-out;
+    }
+
+    .nav-toggle:checked~.video-actions a {
+        opacity: 1;
+        transition: opacity 150ms ease-in-out 150ms;
+    }
+    .nav-toggle:checked~.video-actions{
+        opacity: 1;
+        transition: opacity 150ms ease-in-out 150ms;
+    }
+
+}
