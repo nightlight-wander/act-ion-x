@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useEffect} from "react";
 import { useAuth } from '../../context/AuthContext';
 import { Header } from '../../components/Header/Header';
+import AuthStyles from './Auth.module.css';
 
 const Signup = () => {
     // const userInputRef=useRef();
@@ -34,31 +35,28 @@ const Signup = () => {
         }
     }
   return (
-    <div className="loginGrids-wrapper rows3-grid">
+    <div>
         <Header/>
-        <main className="tab-fullWrapper flex-hCenter ">
-            <div className="tab-wrapper">
-                <ul className="tab-list flex-center sp2-pd-t">
-                    <li className="sp1-pd-b">Sign Up</li>
-                </ul>
-                <div className="tabContent">
-                    <form className="login form flex-col sp4-mg-t" onSubmit={authSubmit}>
-                        <div className="input-wrapper flex-col ">
-                            <label htmlFor="username" className="text-label sp4-mg-lr">
-                                UserName<span className="req-feild">*</span>
+        <main className={`${AuthStyles["tab-fullWrapper"]} flex-hCenter `}>
+            <div className={`${AuthStyles["tab-wrapper"]}`}>
+            <p className={`${AuthStyles["tab-head"]}`}>Signup</p>
+                    <form className={`flex-col`} onSubmit={authSubmit}>
+                        <div className={`${AuthStyles["input-wrapper"]} flex-col`}>
+                            <label htmlFor="username" className={`${AuthStyles["text-label"]}`}>
+                                UserName<span className={`${AuthStyles["req-feild"]}`}>*</span>
                             </label>
-                            <input name="userName" id="username" type="text" className="text-input sp4-mg-lr" />
+                            <input name="userName" id="username" type="text" className={`${AuthStyles["text-input"]}`} />
 
-                            <label htmlFor="email" className="text-label sp4-mg-lr">
-                                Email<span className="req-feild">*</span>
+                            <label htmlFor="email" className={`${AuthStyles["text-label"]}`}>
+                                Email<span className={`${AuthStyles["req-feild"]}`}>*</span>
                             </label>
-                            <input name="email" id="email" type="email" className="text-input sp4-mg-lr"/>
+                            <input name="email" id="email" type="email" className={`${AuthStyles["text-input"]}`}/>
 
-                            <label htmlFor="password" className="text-label sp4-mg-lr">
-                                Password<span className="req-feild">*</span>
+                            <label htmlFor="password" className={`${AuthStyles["text-label"]}`}>
+                                Password<span className={`${AuthStyles["req-feild"]}`}>*</span>
                             </label>
-                            <input name="password" id="password" type="password" className="text-input sp4-mg-lr"/>
-                            <span className="eye-icon1 material-icons material-icons-outlined">
+                            <input name="password" id="password" type="password" className={`${AuthStyles["text-input"]}`}/>
+                            <span className={`${AuthStyles["eye-icon1"]} material-icons material-icons-outlined`}>
                                     visibility
                                 </span>
 
@@ -70,11 +68,10 @@ const Signup = () => {
                                     visibility
                                 </span> */}
                         </div>
-                        <button className="btn-slide button sp-t">Sign Up</button>
+                        <button className={`${AuthStyles["btn-slide"]} ${AuthStyles["login-btn"]} button flex-center`}>Sign Up</button>
                         {/* <button>submit</button> */}
                     </form>
-                </div>
-                <div className="sign-link"><Link to="/Login">Already have an account</Link></div>
+                <div className={`${AuthStyles["sign-link"]}`}><Link to="/Login">Already have an account</Link></div>
             </div>
         </main>
     </div>

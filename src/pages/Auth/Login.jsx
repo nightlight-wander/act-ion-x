@@ -5,7 +5,7 @@ import { Header } from '../../components/Header/Header';
 import { useAuth } from '../../context/AuthContext';
 import "../../styles/spaces.css";
 import "../../styles/common.css";
-import "./Auth.css";
+import AuthStyles from  "./Auth.module.css";
 
 const Login = () => {
     const {user,setUser}=useAuth();
@@ -14,23 +14,23 @@ const Login = () => {
         e.preventDefault();
         const newUserFormData=new FormData(e.target);
         const newUser=Object.fromEntries(newUserFormData.entries());
-        if(newUser.email&&newUser.password&&newUser.userName!==""){
+        console.log(newUserFormData);
+        if(newUser.email&&newUser.password){
             setUser(()=>newUser);
         }else{
             setUser(()=>"");
         }
         
     };
-    // const getUserData=
+
     useEffect(()=>{
         (
-            async(userObj)=>{
+            async(user)=>{
                 try{
                     const response=await axios.post (`/api/auth/login`,{
-                        email:userObj.email,
-                        password:userObj.password,
+                        email:user.email,
+                        password:user.password,
                     });
-                    console.log(response)
                     if(response.status===200){
                         localStorage.setItem("user",JSON.stringify(response.data.foundUser));
                     }
@@ -41,7 +41,7 @@ const Login = () => {
                     console.log(error); 
                 }
             }
-        )()
+        )(user)
         // eslint-disable-next-line
     },[user])
 
@@ -52,24 +52,21 @@ const Login = () => {
     return (
         <div>
             <Header />
-            <main className="tab-fullWrapper flex-hCenter ">
-                <div className="tab-wrapper">
-                    <ul className="tab-list flex-center sp2-pd-t">
-                        <li className="sp1-pd-b">Login</li>
-                    </ul>
-                    <div className="tabContent">
-                        <form className="login form flex-col sp4-mg-t" onSubmit={authSubmit}>
-                            <div className="input-wrapper flex-col ">
-                                <label for="email" className="text-label sp4-mg-lr">
-                                    Email<span className="req-feild">*</span>
+            <main className={`${AuthStyles["tab-fullWrapper"]} flex-hCenter `}>
+                <div className={`${AuthStyles["tab-wrapper"]}`}>
+                   <p className={`${AuthStyles["tab-head"]}`}>Login</p>
+                        <form className={`flex-col`} onSubmit={authSubmit}>
+                            <div className={`${AuthStyles["input-wrapper"]} flex-col`}>
+                                <label htmlFor="email" className={`${AuthStyles["text-label"]}`}>
+                                    Email<span className={`${AuthStyles["req-feild"]}`}>*</span>
                                 </label>
-                                <input name="email" value={user.email} id="email" type="email" className="text-input sp4-mg-lr" />
+                                <input name="email" value={user.email} id="email" type="email" className={`${AuthStyles["text-input"]}`} />
 
-                                <label for="password" className="text-label sp4-mg-lr ">
-                                    Password<span className="req-feild">*</span>
+                                <label for="password" className={`${AuthStyles["text-label"]}`}>
+                                    Password<span className={`${AuthStyles["req-feild"]}`}>*</span>
                                 </label>
-                                <input name="password" value={user.password} id="password" type="password" className="text-input sp4-mg-lr" />
-                                <span className="eye-icon material-icons material-icons-outlined">
+                                <input name="password" value={user.password} id="password" type="password" className={`${AuthStyles["text-input"]}`} />
+                                <span className={`${AuthStyles["eye-icon"]} material-icons material-icons-outlined`}>
                                     visibility
                                 </span>
                             </div>
@@ -83,11 +80,10 @@ const Login = () => {
                                 </div>
                             </div> */}
                             
-                            <button className="btn-slide button sp-t">Sign In</button>
+                            <button className={`${AuthStyles["btn-slide"]} ${AuthStyles["login-btn"]} button flex-center`}>Sign In</button>
                         </form>
-                        <button className="btn-slide button sp-t test-btn" onClick={guestLogin}>Guest Login</button>
-                    </div>
-                    <div className="sign-link"><Link to="/Signup">Create New Account</Link></div>
+                        <button className={`${AuthStyles["btn-slide"]} ${AuthStyles["test-btn"]} button`} onClick={guestLogin}>Guest Login</button>
+                    <div className={`${AuthStyles["sign-link"]}`}><Link to="/Signup">Create New Account</Link></div>
                 </div>
             </main>
             </div> 

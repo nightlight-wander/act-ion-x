@@ -1,58 +1,41 @@
-.header {
-    grid-area: row-grid1;
-    color: var(--white);
-    background-color:var(--pink8bg);
-}
-
-main{
-    grid-area: row-grid2;
-    background-color:var(--pink8bg);
-}
 
 .tab-fullWrapper{
     padding: 5rem 0 5rem 0;
+    margin:6rem auto;
+    width:min(600px,70vw);
 }
 
 .tab-wrapper{
     height: 100%;
-    max-width: 90%;
-    background-color: var(--pink8);
-    color: var(--gold1);
-    box-shadow: var(--box-shadow-primary-out);
+    width: 100%;
+    background-color: var(--purple-main);
+    color: var(--yellowGold);
 }
 
-.tab-list li{
-    list-style: none;
+.tab-head{
     width: 15rem;
     text-align: center;
     border-bottom: 2px solid var(--gold1);
     font-size: 2rem;
     font-weight: 600;
-}
-
-.tab-list{
-    padding-top:2rem ;
-    gap: 10rem;
-}
-
-.tab-list li{
     padding-bottom: 1rem;
-    text-decoration: none;
     color: var(--white); 
+    padding-top:2rem ;
+    margin: auto;
 }
 
-.tab-list li:hover{
+.tab-head:hover{
     color: var(--tomatoOrange);
 }
 
-
 .input-wrapper{
     position: relative;
+    padding: 4rem 4rem 1.2rem;
 }
 
-.input-wrapper input{
+/* .input-wrapper input{
     color: var(--yellowGold);
-}
+} */
 
 .text-input,.text-label{
     font-size: 1.8rem;
@@ -62,9 +45,8 @@ main{
 .input-wrapper .text-input{
     margin-bottom: 1.6rem;
     border: none;
-    outline-color: var(--gold1);
+    outline-color: var(--purple-main);
     height: 3rem;
-    box-shadow: var(--box-shadow-primary-in);
 }
 
 .input-wrapper .text-label{
@@ -88,10 +70,10 @@ main{
 }
 
 .sign-link a{
-    color: var(--gold1);
+    color: var(--yellowGold);
     font-size: 1.8rem;
     font-weight: 400;
-    border-bottom:1px solid var(--gold1) ;
+    border-bottom:1px solid var(--yellowGold) ;
    
 }
 
@@ -99,32 +81,20 @@ main{
     position: absolute;
     top: 73.8%;
     right: 5rem;
-    color: var(--tomatoOrange);
+    color: var(--yellowGold);
     cursor: pointer;
 }
 .eye-icon1{
   position: absolute;
-  top: 61.5%;
+  top: 54.5%;
   right: 5rem;
   color: var(--tomatoOrange);
   cursor: pointer;
 }
 
-.eye-icon2{
-    position: absolute;
-    top: 86.4%;
-    right: 5rem;
-    color: var(--tomatoOrange);
-    cursor: pointer;
-}
-
-form button{
-    color: var(--gold1);
-}
-
-.tabContent .test-btn{
-    color: var(--gold1);
-    margin: 0 8rem 1rem;
+.login-btn ,.test-btn{
+    margin: 2rem auto 1rem;
+    color: var(--yellowGold);
 }
 
 /*Login Button CSS  */
@@ -140,7 +110,7 @@ form button{
     position: relative;
     overflow: hidden;
     z-index: 2;
-    border: 2px solid var(--gold1);
+    border: 2px solid var(--yellowGold);
     vertical-align: middle;
     display: flex;
     align-items: center;
@@ -156,7 +126,7 @@ form button{
     top: 0;
     left: 0;
     position: absolute;
-    background-image: linear-gradient(to right,var(--pink8) 0%,var( --dullgold) 100%);
+    background-image: linear-gradient(to right,var( --purple-main) 0%,var(--gold1) 100%);
     display: block;
     transition: .5s ease;
     z-index: -1;
@@ -165,8 +135,4 @@ form button{
 
 .btn-slide:hover::before{
     width: 40rem;
-}
-
-.sp-t{
-    margin: 2rem 4rem 0;
 }
