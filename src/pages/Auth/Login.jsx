@@ -56,7 +56,7 @@ const Login = () => {
     }
 
     return (
-        <div className={`${AuthStyles.loginColor}`}>
+        <div>
             <Header />
             <main className={`${AuthStyles["tab-fullWrapper"]} flex-hCenter `}>
                 <div className={`${AuthStyles["tab-wrapper"]}`}>
