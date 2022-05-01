@@ -15,7 +15,7 @@ const Tabs = ({ children }) => {
             {
                 // eslint-disable-next-line
             children.map((child) => {
-                if (child.props.label === activeTab) 
+                if (child.props.label === activeTab)  
                 return (
                 <div key={child.props.label} className={`${TabStyles.tabsContent}`}>{child.props.children}</div>
                 );
@@ -25,3 +25,5 @@ const Tabs = ({ children }) => {
 }
 
 export { Tabs }; 
+
+//check if remote updating
