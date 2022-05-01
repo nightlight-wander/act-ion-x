@@ -21,6 +21,7 @@ const Signup = () => {
     };
     useEffect(()=>{
         createNewUser(user);
+        // eslint-disable-next-line
     },[user])
     const createNewUser=async(userObj)=>{
         try{
