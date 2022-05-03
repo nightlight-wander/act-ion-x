@@ -1,24 +1,22 @@
 import {useEffect} from 'react';
-import axios from 'axios';
 import { Link,useNavigate,useLocation } from "react-router-dom";
 import { Header } from '../../components/Header/Header';
 import { useAuth } from '../../context/AuthContext';
 import "../../styles/spaces.css";
 import "../../styles/common.css";
 import AuthStyles from  "./Auth.module.css";
+import { getTokenOnLogin } from '../../services/authServices';
 
 const Login = () => {
     const {user,setUser,seteToken}=useAuth();
     const navigate=useNavigate(); //useNavigate hook that returns navigate function
     const location=useLocation();
-    // const emailRef=useRef();
-    // const passwordRef=useRef();
     const authSubmit=(e)=>{
         e.preventDefault();
         const newUserFormData=new FormData(e.target);
         const newUser=Object.fromEntries(newUserFormData.entries());
-        console.log(newUserFormData);
-        if(newUser.email&&newUser.password){
+        console.log(newUser);
+        if(newUser.email&&newUser.password&&newUser.userName!==""){
             setUser(()=>newUser);
         }else{
             setUser(()=>"");
@@ -27,32 +25,12 @@ const Login = () => {
     };
 
     useEffect(()=>{
-        (
-            async(user)=>{
-                try{
-                    const response=await axios.post (`/api/auth/login`,{
-                        email:user.email,
-                        password:user.password,
-                    });
-                    if(response.status===200){
-                        localStorage.setItem("user",JSON.stringify(response.data.foundUser));
-                        localStorage.setItem("eToken",response.data.encodedToken);
-                        seteToken(()=>response.data.encodedToken)
-                        navigate(location?.state?.from?.pathname||"/",{replace:true})
-                    }
-                    else{
-                        navigate("/login");
-                    }
-                }catch(error){
-                    console.log(error); 
-                }
-            }
-        )(user)
+        (getTokenOnLogin(navigate))(user,seteToken,location)
         // eslint-disable-next-line
     },[user])
 
     const guestLogin=()=>{
-        setUser(()=>({email: 'flyflow@gmail.com', password: 'paperplanes12'}));
+        setUser(()=>({email: 'flyflow@gmail.com', password: 'paperplanes12',userName:"Freeyay"}));
     }
 
     return (
@@ -61,7 +39,7 @@ const Login = () => {
             <main className={`${AuthStyles["tab-fullWrapper"]} flex-hCenter `}>
                 <div className={`${AuthStyles["tab-wrapper"]}`}>
                    <p className={`${AuthStyles["tab-head"]}`}>Login</p>
-                        <form className={`flex-col`} onSubmit={authSubmit}>
+                        <form className={`flex-col`} onSubmit={(e)=>authSubmit(e)}>
                             <div className={`${AuthStyles["input-wrapper"]} flex-col`}>
                                 <label htmlFor="email" className={`${AuthStyles["text-label"]}`}>
                                     Email<span className={`${AuthStyles["req-feild"]}`}>*</span>

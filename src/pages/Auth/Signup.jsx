@@ -1,9 +1,9 @@
 import { Link,useNavigate } from "react-router-dom";
-import axios from 'axios';
 import { useEffect} from "react";
 import { useAuth } from '../../context/AuthContext';
 import { Header } from '../../components/Header/Header';
 import AuthStyles from './Auth.module.css';
+import { createNewUser } from "../../services/authServices";
 
 const Signup = () => {
     const navigate=useNavigate();
@@ -20,30 +20,10 @@ const Signup = () => {
         
     };
     useEffect(()=>{
-        createNewUser(user);
+        (createNewUser(seteToken,navigate))(user);
         // eslint-disable-next-line
     },[user])
-    const createNewUser=async(userObj)=>{
-        try{
-            const response=await axios.post (`/api/auth/signup`,{
-                userName:userObj.userName,
-                email:userObj.email,
-                password:userObj.password,
-            });
-            if(response.status===201){
-                localStorage.setItem("user",JSON.stringify(response.data.foundUser));
-                localStorage.setItem("eToken",response.data.encodedToken);
-                seteToken(()=>response.data.encodedToken)
-                navigate("/")
-            }
-            else{
-                navigate("/signup");
-            }
-            console.log(response);
-        }catch(error){
-            console.log(error);
-        }
-    }
+    
   return (
     <div>
         <Header/>

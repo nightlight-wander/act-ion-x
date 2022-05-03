@@ -1,45 +1,35 @@
+import { useEffect } from "react";
 import { BottomNav } from "../../components/BottomNav/BottomNav";
 import { GenreSlider } from "../../components/GenreSlider/GenreSlider";
 import { Header } from "../../components/Header/Header";
 import { useVideos } from "../../context/VideosContest";
 import VideosStyles from "./VideoListing.module.css";
-import axios from "axios";
-import { useEffect } from "react";
+import { fetchVideosByCat } from "../../services/videosCatsServices";
 
 const VideoListing = () => {
   const {setCategories, category,setVideos,videos,selectGenre,isGenres} = useVideos();
 
   useEffect(()=>{
-    const fetchVideos=async()=>{ 
-        try{
-          const { data: { categories } } = await axios.get("/api/categories");
-          const {data:{videos}}=await axios.get("/api/videos");
-          const videosByCat=categories.map((catObj)=>{
-            return videos.filter((curVideoObj)=>{
-              return curVideoObj.category===catObj.category
-            })
-          })
-          setCategories(()=>categories);
-          const videosByGenre=[...videosByCat[category]].filter(videoObj=>selectGenre.includes(videoObj.genreName))
-          isGenres===true?setVideos(()=>videosByGenre):setVideos(()=>videosByCat[category]);
-        }catch(error){
-          console.log(error);
-        }
-    }
-    fetchVideos();
+    // const fetchVideos=async()=>{ 
+    //     try{
+    //       const { data: { categories } } = await axios.get("/api/categories");
+    //       const {data:{videos}}=await axios.get("/api/videos");
+    //       const videosByCat=categories.map((catObj)=>{
+    //         return videos.filter((curVideoObj)=>{
+    //           return curVideoObj.category===catObj.category
+    //         })
+    //       })
+    //       setCategories(()=>categories);
+    //       const videosByGenre=[...videosByCat[category]].filter(videoObj=>selectGenre.includes(videoObj.genreName))
+    //       isGenres===true?setVideos(()=>videosByGenre):setVideos(()=>videosByCat[category]);
+    //     }catch(error){
+    //       console.log(error);
+    //     }
+    // }
+    (fetchVideosByCat())(setCategories,setVideos,category,selectGenre,isGenres);
     // eslint-disable-next-line
 },[category,isGenres,selectGenre])
 
-// const filterVideosByGenre = (videos,selectGenre,isGenres)=>{
-//   if(isGenres===true){
-//     return videos.filter((videoObj)=>selectGenre.includes(videoObj.genreName));
-//   }else{
-//     return videos
-//   }
-// }
-// const videosByGenre=filterVideosByGenre([...videos],selectGenre,isGenres);
-  
-  
   return (
     <>
       <Header />
