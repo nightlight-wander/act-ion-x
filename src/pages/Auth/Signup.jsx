@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import axios from 'axios';
 import { useEffect} from "react";
 import { useAuth } from '../../context/AuthContext';
@@ -6,8 +6,8 @@ import { Header } from '../../components/Header/Header';
 import AuthStyles from './Auth.module.css';
 
 const Signup = () => {
-    // const userInputRef=useRef();
-    const {user,setUser}=useAuth();
+    const navigate=useNavigate();
+    const {user,setUser,seteToken}=useAuth();
     const authSubmit=(e)=>{
         e.preventDefault();
         const newUserFormData=new FormData(e.target);
@@ -21,6 +21,7 @@ const Signup = () => {
     };
     useEffect(()=>{
         createNewUser(user);
+        // eslint-disable-next-line
     },[user])
     const createNewUser=async(userObj)=>{
         try{
@@ -29,6 +30,15 @@ const Signup = () => {
                 email:userObj.email,
                 password:userObj.password,
             });
+            if(response.status===201){
+                localStorage.setItem("user",JSON.stringify(response.data.foundUser));
+                localStorage.setItem("eToken",response.data.encodedToken);
+                seteToken(()=>response.data.encodedToken)
+                navigate("/")
+            }
+            else{
+                navigate("/signup");
+            }
             console.log(response);
         }catch(error){
             console.log(error);

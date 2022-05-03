@@ -1,4 +1,3 @@
-
 .tab-fullWrapper{
     padding: 5rem 0 5rem 0;
     margin:6rem auto;
@@ -9,6 +8,8 @@
     height: 100%;
     width: 100%;
     background-color: var(--purple-main);
+    background: -webkit-linear-gradient(to right, var(--purple-main), var(--tomatoOrange)); 
+    background: linear-gradient(to right, var(--purple-main), var(--tomatoOrange));
     color: var(--yellowGold);
 }
 

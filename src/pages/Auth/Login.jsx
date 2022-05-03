@@ -1,6 +1,6 @@
 import {useEffect} from 'react';
 import axios from 'axios';
-import { Link,useNavigate } from "react-router-dom";
+import { Link,useNavigate,useLocation } from "react-router-dom";
 import { Header } from '../../components/Header/Header';
 import { useAuth } from '../../context/AuthContext';
 import "../../styles/spaces.css";
@@ -8,8 +8,11 @@ import "../../styles/common.css";
 import AuthStyles from  "./Auth.module.css";
 
 const Login = () => {
-    const {user,setUser}=useAuth();
+    const {user,setUser,seteToken}=useAuth();
     const navigate=useNavigate(); //useNavigate hook that returns navigate function
+    const location=useLocation();
+    // const emailRef=useRef();
+    // const passwordRef=useRef();
     const authSubmit=(e)=>{
         e.preventDefault();
         const newUserFormData=new FormData(e.target);
@@ -33,9 +36,12 @@ const Login = () => {
                     });
                     if(response.status===200){
                         localStorage.setItem("user",JSON.stringify(response.data.foundUser));
+                        localStorage.setItem("eToken",response.data.encodedToken);
+                        seteToken(()=>response.data.encodedToken)
+                        navigate(location?.state?.from?.pathname||"/",{replace:true})
                     }
                     else{
-                        navigate("/");
+                        navigate("/login");
                     }
                 }catch(error){
                     console.log(error); 
@@ -60,12 +66,12 @@ const Login = () => {
                                 <label htmlFor="email" className={`${AuthStyles["text-label"]}`}>
                                     Email<span className={`${AuthStyles["req-feild"]}`}>*</span>
                                 </label>
-                                <input name="email" value={user.email} id="email" type="email" className={`${AuthStyles["text-input"]}`} />
+                                <input name="email" id="email" type="email" className={`${AuthStyles["text-input"]}`} />
 
                                 <label for="password" className={`${AuthStyles["text-label"]}`}>
                                     Password<span className={`${AuthStyles["req-feild"]}`}>*</span>
                                 </label>
-                                <input name="password" value={user.password} id="password" type="password" className={`${AuthStyles["text-input"]}`} />
+                                <input name="password" id="password"  type="password" className={`${AuthStyles["text-input"]}`} />
                                 <span className={`${AuthStyles["eye-icon"]} material-icons material-icons-outlined`}>
                                     visibility
                                 </span>
