@@ -7,26 +7,10 @@ import VideosStyles from "./VideoListing.module.css";
 import { fetchVideosByCat } from "../../services/videosCatsServices";
 
 const VideoListing = () => {
-  const {setCategories, category,setVideos,videos,selectGenre,isGenres} = useVideos();
+  const {videoDispatch,videoStates:{category,selectGenre,isGenres,videos}} = useVideos();
 
   useEffect(()=>{
-    // const fetchVideos=async()=>{ 
-    //     try{
-    //       const { data: { categories } } = await axios.get("/api/categories");
-    //       const {data:{videos}}=await axios.get("/api/videos");
-    //       const videosByCat=categories.map((catObj)=>{
-    //         return videos.filter((curVideoObj)=>{
-    //           return curVideoObj.category===catObj.category
-    //         })
-    //       })
-    //       setCategories(()=>categories);
-    //       const videosByGenre=[...videosByCat[category]].filter(videoObj=>selectGenre.includes(videoObj.genreName))
-    //       isGenres===true?setVideos(()=>videosByGenre):setVideos(()=>videosByCat[category]);
-    //     }catch(error){
-    //       console.log(error);
-    //     }
-    // }
-    (fetchVideosByCat())(setCategories,setVideos,category,selectGenre,isGenres);
+    (fetchVideosByCat())(videoDispatch,category,selectGenre,isGenres);
     // eslint-disable-next-line
 },[category,isGenres,selectGenre])
 
