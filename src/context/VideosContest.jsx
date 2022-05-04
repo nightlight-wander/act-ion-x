@@ -23,7 +23,7 @@ const videoReducerFunc=(state,action)=>{
         case SELECT_GENRES:{
             return{
                 ...state,
-                // selectGenre:(!state.selectGenre.includes(action.payload))?[...state.selectGenre,action.payload]:state.selectGenre
+                // selectGenre:(!state.selectGenre.includes(action.payload))?[...state.selectGenre,action.payload]:action.payload
                 selectGenre:action.payload
             }
         }

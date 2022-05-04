@@ -6,11 +6,11 @@ import { IS_GENRES_SET, SELECT_GENRES } from '../../utilities/actions-types';
 const GenreSlider = () => {
   const { videoStates:{genres,selectGenre},videoDispatch} = useVideos();
   const GenreHandler = (genreObj) => {
-    const selectedGenres = genres.reduce((curTotal, curObj) => curObj.genreName === genreObj.genreName  ? genreObj.genreName : curTotal, "");
-    console.log(selectedGenres);
+    const selectedGenre = genres.reduce((curTotal, curObj) => curObj.genreName === genreObj.genreName  ? genreObj.genreName : curTotal, "");
+    // console.log(selectedGenres);
     // (!selectGenre.includes(action.payload))?[...selectGenre,selectedGenres]:selectGenre
-    (!selectGenre.includes(selectedGenres))?videoDispatch({type:SELECT_GENRES,payload:[...selectGenre,selectedGenres]}):videoDispatch({type:SELECT_GENRES,payload:selectGenre})
-    // videoDispatch({type:SELECT_GENRES,payload:selectedGenres});
+    (!selectGenre.includes(selectedGenre))?videoDispatch({type:SELECT_GENRES,payload:[...selectGenre,selectedGenre]}):videoDispatch({type:SELECT_GENRES,payload:selectGenre})
+    // videoDispatch({type:SELECT_GENRES,payload:selectedGenre});
     videoDispatch({type:IS_GENRES_SET,payload:true});
   }
 
