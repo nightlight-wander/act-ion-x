@@ -1,8 +1,9 @@
+import { Link } from "react-router-dom";
 import VideosStyles from "../../pages/VideoListing/VideoListing.module.css";
 
 const VideoCard = ({ videoObj }) => {
     return (
-        <div className={`${VideosStyles.videoWrapper}`}>
+        <Link to={`/video/${videoObj._id}`}><div className={`${VideosStyles.videoWrapper}`}>
             <div className={`${VideosStyles.videoBackground}`}><img src={videoObj.thumbnail} alt={videoObj.title} className={`${VideosStyles.videoImg}`}></img></div>
             <div className={`${VideosStyles.videoTitle}`}><h2>{videoObj.title}</h2></div>
             <span className={`${VideosStyles.videoCreator}`}>{videoObj.creator}</span>
@@ -16,7 +17,7 @@ const VideoCard = ({ videoObj }) => {
             </div>
 
         </div>
-
+        </Link>
     )
 }
 
