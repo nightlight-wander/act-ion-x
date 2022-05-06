@@ -4,18 +4,19 @@ import { BottomNav } from "../../components/BottomNav/BottomNav";
 import { GenreSlider } from "../../components/GenreSlider/GenreSlider";
 import axios from "axios";
 import { useEffect } from "react";
+import { GET_CATEGORIES } from "../../utilities/actions-types";
 
 
 
 const Home = () => {
-  const { categories,setCategories} = useVideos();
+  const { videoStates:{categories},videoDispatch} = useVideos();
+  // console.log(videoStates)
 
   useEffect(()=>{
     (async()=>{
         try{
           const { data: { categories } } = await axios.get("/api/categories");
-         
-          setCategories(()=>categories);
+          videoDispatch({type:GET_CATEGORIES,payload:categories});
         }catch(error){
           console.log(error);
         }

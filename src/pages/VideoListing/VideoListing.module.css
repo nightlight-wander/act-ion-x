@@ -12,6 +12,7 @@
     display: grid;
     max-width:300px ;
     height: 250px;
+   
 }
 
 .videoBackground{
@@ -22,6 +23,7 @@
     height: 250px;
     width: 300px;
     object-fit: contain cover;
+    
 }
 
 .videoTitle,.videoBackground{

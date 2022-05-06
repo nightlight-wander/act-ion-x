@@ -7,6 +7,7 @@
     --primary-purple: #5b0eeb;
     --purple-main:rgb(162, 102, 246);
     --purple-main-1:rgb(162, 102, 246,50%);
+    --purple-main-2:rgb(162, 102, 246,30%);
     /* --secondary:#394fe2;
     --secondary-light:#054ab1; */
   
@@ -47,7 +48,7 @@
     --dull-pink:#ffaca2;
     --dull-pink:#ebb4ae;
   
-    --tomatoOrange:rgb(255,99,71);
+    --tomatoOrange:rgba(255,99,71);
     --coralOrange:rgb(255,127,80);
     --yellowGold:rgb(255, 215, 0);
     --yellowGold:rgb(255, 215, 0);

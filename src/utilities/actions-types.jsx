@@ -1,0 +1,6 @@
+export const GET_CATEGORIES="GET_CATEGORIES";
+export const GET_GENRES="GET_GENRES";
+export const SELECT_GENRES="SELECT_GENRES";
+export const SET_CATEGORY="SET_CATEGORY";
+export const GET_VIDEOS="GET_VIDEOS";
+export const IS_GENRES_SET="IS_GENRES_SET"

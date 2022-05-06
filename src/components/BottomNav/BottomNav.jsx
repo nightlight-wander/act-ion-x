@@ -1,20 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useVideos } from '../../context/VideosContest';
+import { GET_GENRES, IS_GENRES_SET, SELECT_GENRES, SET_CATEGORY } from '../../utilities/actions-types';
 
 import HomeStyles from "./BottomNav.module.css";
 
 export function BottomNav() {
-    const {categories,setCategory,setGenres,setSelectGenre,setIsGenres}=useVideos();
+    const {videoStates:{categories},videoDispatch}=useVideos();
 
     const CatGenreHandler = (selectedCat) => {
         const genresArray = categories.reduce((curTotal, curObj) => {
           return curObj.category === categories[Number(selectedCat)].category ? curObj.genre : curTotal
         },[])
-        setGenres(() => [...genresArray]);
-        setSelectGenre(()=>[]);
-        setCategory(()=>selectedCat);
-        setIsGenres(false);
+        videoDispatch({type:GET_GENRES,payload:genresArray});
+        videoDispatch({type:SELECT_GENRES,payload:[]});
+        videoDispatch({type:SET_CATEGORY,payload:selectedCat});
+        videoDispatch({type:IS_GENRES_SET,payload:false});
     }
 
 

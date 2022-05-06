@@ -1,13 +1,17 @@
 import React from 'react';
 import { useVideos } from '../../context/VideosContest';
 import HomeStyles from '../../pages/Home/Home.module.css';
+import { IS_GENRES_SET, SELECT_GENRES } from '../../utilities/actions-types';
 
 const GenreSlider = () => {
-  const { genres, selectGenre, setSelectGenre,setIsGenres} = useVideos();
+  const { videoStates:{genres,selectGenre},videoDispatch} = useVideos();
   const GenreHandler = (genreObj) => {
-    const selectedGenres = genres.reduce((curTotal, curObj) => curObj.genreName === genreObj.genreName  ? genreObj.genreName : curTotal, "");
-    setSelectGenre(()=>(!selectGenre.includes(selectedGenres))?[...selectGenre,selectedGenres]:selectGenre)
-    setIsGenres(true);
+    const selectedGenre = genres.reduce((curTotal, curObj) => curObj.genreName === genreObj.genreName  ? genreObj.genreName : curTotal, "");
+    // console.log(selectedGenres);
+    // (!selectGenre.includes(action.payload))?[...selectGenre,selectedGenres]:selectGenre
+    (!selectGenre.includes(selectedGenre))?videoDispatch({type:SELECT_GENRES,payload:[...selectGenre,selectedGenre]}):videoDispatch({type:SELECT_GENRES,payload:selectGenre})
+    // videoDispatch({type:SELECT_GENRES,payload:selectedGenre});
+    videoDispatch({type:IS_GENRES_SET,payload:true});
   }
 
   return (
