@@ -17,7 +17,12 @@ const SingleVideo = () => {
             <Header />
             {singleVideo &&
                 <div key={_id} className={`${PlayStyles["single-video-wrapper"]}`}>
-                    <iframe title={title} src={`https://youtube.com/embed/${videoId}`} className={`${PlayStyles["video-iframe"]}`}></iframe>
+                    <iframe 
+                    title={title} 
+                    src={`https://youtube.com/embed/${videoId}`} 
+                    className={`${PlayStyles["video-iframe"]}`}
+                    allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'>
+                    </iframe>
                     <div className={`${PlayStyles["video-icons-info"]}`}>
                         <div className={`${PlayStyles["video-icons"]}`}><span className={` material-icons material-icons-outlined`}>
                             watch_later
