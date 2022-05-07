@@ -4,7 +4,7 @@
     grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
     row-gap: 4rem;
     column-gap: 3rem;
-
+    min-height: 60rem;
 }
 
 .videoWrapper{
@@ -70,4 +70,21 @@
 
 .videoIcon span{
     padding-right: 2rem;
+}
+
+.cross-box{
+    width: 4rem;
+    height: 4rem;
+    background-color: var(--purple-main-1);
+    border-radius: 50%;
+    margin: 1rem;
+    grid-area: 1/-1;
+    align-self: end;
+    justify-self:start;
+    color: var(--yellowGold);
+}
+
+.cross-icon{
+    font-size: 3rem;
+    font-weight: 600;
 }
