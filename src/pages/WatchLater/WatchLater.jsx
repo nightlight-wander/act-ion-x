@@ -3,7 +3,6 @@ import { useVideoActions } from "../../context/VideoActionsContext";
 import VideosStyles from "../../pages/VideoListing/VideoListing.module.css";
 import {Header} from "../../components/Header/Header"
 import { BottomNav } from "../../components/BottomNav/BottomNav";
-import { GenreSlider } from "../../components/GenreSlider/GenreSlider";
 
 const WatchLater = () => {
   const {videoActStates:{watchLater}}=useVideoActions();

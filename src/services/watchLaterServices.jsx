@@ -21,3 +21,13 @@ export const removeFromWatchLater=async(videoObj,eToken,videoActDispatch)=>{
         console.log(error);
     }
 }
+
+export const getWatchLater=async(eToken,videoActDispatch)=>{
+  try{
+      const response=await axios.get("/api/user/watchlater",{headers:{authorization:eToken}});
+      console.log(response);
+      videoActDispatch({type:WATCH_LATER,payload:response.data.watchlater})
+  }catch(error){
+      console.log(error);
+  }
+}

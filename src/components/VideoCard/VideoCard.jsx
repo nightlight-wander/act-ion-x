@@ -1,16 +1,21 @@
 import { Link,useNavigate } from "react-router-dom";
-import { useState,useEffect } from "react";
+import { useEffect } from "react";
 import { useAuth } from "../../context/AuthContext";
 import VideosStyles from "../../pages/VideoListing/VideoListing.module.css";
-import { addToWatchLater,removeFromWatchLater } from "../../services/watchLaterServices";
+import { addToWatchLater,getWatchLater,removeFromWatchLater } from "../../services/watchLaterServices";
 import { useVideoActions } from "../../context/VideoActionsContext";
 
 const VideoCard = ({ videoObj }) => {
     const {videoActStates:{watchLater},videoActDispatch}=useVideoActions();
     const {eToken}=useAuth();
     const navigate=useNavigate();
-    
-    const onWatchLater=(e,videoObj)=>{
+
+    // useEffect(() => {
+    //    getWatchLater(eToken,videoActDispatch)
+    //     // eslint-disable-next-line
+    //   },[eToken])
+
+    const onWatchLater=async(e,videoObj)=>{
         e.stopPropagation();
         eToken?!isVideoFound(watchLater,videoObj)?addToWatchLater(videoObj,eToken,videoActDispatch):removeFromWatchLater(videoObj,eToken,videoActDispatch):navigate("/login");
     }
