@@ -1,19 +1,19 @@
 import { Link,useNavigate } from "react-router-dom";
-import { useEffect } from "react";
+import {v4 as uuid} from "uuid";
+import { useState } from "react";
 import { useAuth } from "../../context/AuthContext";
 import VideosStyles from "../../pages/VideoListing/VideoListing.module.css";
-import { addToWatchLater,getWatchLater,removeFromWatchLater } from "../../services/watchLaterServices";
+import { addToWatchLater,removeFromWatchLater } from "../../services/watchLaterServices";
 import { useVideoActions } from "../../context/VideoActionsContext";
+import { PlaylistModal } from "../PlaylistModal/PlaylistModal";
+import { ModalForm } from "../ModalForm/ModalForm";
+import {PlayListsBox} from "../../components/PlayListsBox/PlayListsBox"
 
 const VideoCard = ({ videoObj }) => {
     const {videoActStates:{watchLater},videoActDispatch}=useVideoActions();
+    const [modal,setModal]=useState(false);
     const {eToken}=useAuth();
     const navigate=useNavigate();
-
-    // useEffect(() => {
-    //    getWatchLater(eToken,videoActDispatch)
-    //     // eslint-disable-next-line
-    //   },[eToken])
 
     const onWatchLater=async(e,videoObj)=>{
         e.stopPropagation();
@@ -36,9 +36,13 @@ const VideoCard = ({ videoObj }) => {
                 <span className={` material-icons material-icons-outlined`} onClick={(e)=>onWatchLater(e,videoObj)}>
                     watch_later
                 </span>
-                <span class="material-icons">
+                <span class="material-icons" onClick={()=>setModal(true)}>
                     add_circle
                 </span>
+                <PlaylistModal show={modal} close={()=>setModal(false)} className={`${VideosStyles["modal-wrapper"]}`}>
+                    <ModalForm/>
+                    <PlayListsBox videoObj={videoObj}/>
+                </PlaylistModal>
             </div>
         </div>
         

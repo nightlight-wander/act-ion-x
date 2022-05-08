@@ -10,6 +10,7 @@ import {Playlists} from "./pages/Playlists/Playlists";
 import {RequiresAuth} from "./components/RequiresAuth/RequiresAuth";
 import { Profile } from "./pages/Profile/Profile";
 import { SingleVideo } from "./pages/SingleVideo/SingleVideo";
+import {SinglePlaylist} from "./pages/SinglePlaylist/SinglePlaylist"
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/mock" element={<Mockman/>}/>
         <Route path="/video/:videoId" element={<SingleVideo/>}/>
         <Route path="/playlists" element={<RequiresAuth><Playlists/></RequiresAuth>}/>
+        <Route path="/playlists/:playlistId" element={<RequiresAuth><SinglePlaylist/></RequiresAuth>}/>
         <Route path="/watch-later" element={<RequiresAuth><WatchLater/></RequiresAuth>}/>
         <Route path="/history" element={<RequiresAuth><History/></RequiresAuth>}/>
       </Routes>

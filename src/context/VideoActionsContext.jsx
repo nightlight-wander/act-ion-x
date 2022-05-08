@@ -1,5 +1,5 @@
 import { createContext, useContext, useReducer } from "react";
-import { WATCH_LATER } from "../utilities/actions-types";
+import { UPDATE_CURPLAYLIST,  PLAYLISTS, WATCH_LATER} from "../utilities/actions-types";
 const VideoActionsContext = createContext();
 const useVideoActions = () => useContext(VideoActionsContext);
 
@@ -7,7 +7,11 @@ const intialStates = {
     watchLater: [],
     history: [],
     likes: [],
-    playlists: []
+    playlists: [],
+    // curPlayList:{   _id:uuid(),
+    //     listName:"Favourites",
+    //     videos:[]
+    // },
 }
 
 const videoActionsReducerFunc = (state, action) => {
@@ -17,13 +21,28 @@ const videoActionsReducerFunc = (state, action) => {
                 ...state,
                 watchLater: action.payload
             }
+        case PLAYLISTS:
+            return {
+                ...state,
+                playlists: action.payload
+            }
+        case UPDATE_CURPLAYLIST:
+            return {
+                ...state,
+                playlists: state.playlists.map((playlist) =>
+                    playlist._id === action.payload._id
+                        ? { ...playlist, videos: action.payload.videos } : playlist)
+            }
         default:
             return state
     }
 }
 
+
+
 const VideoActionsProvider = ({ children }) => {
     const [videoActStates, videoActDispatch] = useReducer(videoActionsReducerFunc, intialStates);
+
     return (
         <VideoActionsContext.Provider value={{ videoActStates, videoActDispatch }}>
             {children}
