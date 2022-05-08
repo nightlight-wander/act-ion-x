@@ -51,6 +51,7 @@
 
 .videoIcon{
     display: none;
+    position: relative;
 }
 
 .videoWrapper:hover .videoIcon{
@@ -89,12 +90,15 @@
     font-weight: 600;
 }
 
-/* .modal-wrapper{
+.videoWrapper:hover .modal-wrapper{
     color: white;
+    background-color: red;
     width: 5rem;
     height: 5rem;
+    z-index: 40;
+    position: absolute;
 }
 
-.active{
+/* .active{
     color: red;
 } */

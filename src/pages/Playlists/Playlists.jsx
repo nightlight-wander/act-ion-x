@@ -7,9 +7,9 @@ import { useAuth } from "../../context/AuthContext";
 import { deletePlaylist } from "../../services/playListServices";
 
 const Playlists = () => {
-  const { videoActStates: { playlists },videoActDispatch} = useVideoActions();
-  const {eToken}=useAuth();
-  
+  const { videoActStates: { playlists }, videoActDispatch } = useVideoActions();
+  const { eToken } = useAuth();
+
   return (
     <div>
       <Header />
@@ -29,11 +29,11 @@ const Playlists = () => {
             </div>)} */}
             </Link>
             <div className={`${PlayListStyles["playlist-title"]}`}>{playListObj.title}
-            
-            <span className="material-icons" onClick={()=>deletePlaylist(playListObj._id,eToken,videoActDispatch)}>
-              clear
-            </span>
-           
+
+              <span className="material-icons" onClick={() => deletePlaylist(playListObj._id, eToken, videoActDispatch)}>
+                clear
+              </span>
+
             </div>
           </div>)
         })}
