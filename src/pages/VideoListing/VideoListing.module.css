@@ -82,7 +82,7 @@
     grid-area: 1/-1;
     align-self: end;
     justify-self:start;
-    color: var(--yellowGold);
+    color: var(--yellowGold); 
 }
 
 .cross-icon{

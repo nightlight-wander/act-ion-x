@@ -13,6 +13,7 @@ const VideoCard = ({ videoObj }) => {
     const [modal, setModal] = useState(false);
     const { eToken } = useAuth();
     const navigate = useNavigate();
+    console.log("a");
 
     const onWatchLater = async (e, videoObj) => {
         e.stopPropagation();
