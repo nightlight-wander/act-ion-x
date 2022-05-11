@@ -19,13 +19,9 @@
 
 }
 
-.playlist-card{
-    /* display: inline-block; */
-    min-height: 60rem;
-}
-
 .playlists-wrapper{
-    margin:6rem 9rem;
+    margin:4rem;
+    min-height: 60rem;
     display: flex;
     flex-wrap: wrap;
     gap: 6rem;

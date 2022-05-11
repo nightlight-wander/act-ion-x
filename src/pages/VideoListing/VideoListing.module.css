@@ -1,5 +1,5 @@
 .videosWrapper{
-    margin:6rem 4rem;
+    margin:6rem 4rem 12rem;
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
     row-gap: 4rem;
