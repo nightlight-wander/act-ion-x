@@ -24,6 +24,7 @@ const VideoCard = ({ videoObj }) => {
     }
 
     return (
+        <>
         <div className={`${VideosStyles.videoWrapper}`}>
             <div className={`${VideosStyles.videoBackground}`}>
                 <Link to={`/video/${videoObj._id}`}>
@@ -39,14 +40,14 @@ const VideoCard = ({ videoObj }) => {
                 <span class="material-icons" onClick={() => setModal(true)}>
                     add_circle
                 </span>
-                <PlaylistModal show={modal} close={() => setModal(false)} className={`${VideosStyles["modal-wrapper"]}`}>
+            </div>
+           
+        </div>
+        <PlaylistModal show={modal} close={() => setModal(false)}  style={{position:"absolute"}}>
                     <ModalForm />
                     <PlayListsBox videoObj={videoObj} />
-                </PlaylistModal>
-            </div>
-
-        </div>
-
+            </PlaylistModal>
+        </>
     )
 }
 

@@ -7,7 +7,7 @@ const ModalForm = () => {
     const {videoActDispatch}=useVideoActions();
     const {eToken}=useAuth();
     const [playListName,setPlayListName]=useState("");
-    const playlistCreate=async(e)=>{
+    const playlistCreate=(e)=>{
         e.preventDefault();
         postPlaylists(playListName,videoActDispatch,eToken,setPlayListName);
     }

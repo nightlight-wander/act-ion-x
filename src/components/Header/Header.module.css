@@ -2,9 +2,9 @@
 .header {
     z-index: 10;
     height: 8rem;
+    min-width: 300px;
     display: flex;
     position: relative;
-    background-color: var( );
     box-shadow:  10px 10px 20px var(--purple-main-2),
              -10px -10px 20px #f0f0f0;
 }
