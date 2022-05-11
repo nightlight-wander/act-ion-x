@@ -8,36 +8,33 @@ import { deleteVideoFromPlaylist } from "../../services/playListServices";
 import { useAuth } from "../../context/AuthContext";
 
 const SinglePlaylist = () => {
-  const {playlistId}=useParams();
-  const {videoActStates:{playlists},videoActDispatch}=useVideoActions();
-  const {eToken}=useAuth();
-  const playListFound=playlists.find(item=>item._id===playlistId)
-  const playListVideos=playListFound?.videos;
+  const { playlistId } = useParams();
+  const { videoActStates: { playlists }, videoActDispatch } = useVideoActions();
+  const { eToken } = useAuth();
+  const playListFound = playlists.find(item => item._id === playlistId)
+  const playListVideos = playListFound?.videos;
   console.log(playListFound)
   console.log(playListVideos)
   return (
     <>
-    <Header/>
-    <div className={`${PlayListStyles["playlists-wrapper"]}`}>
-      {playListVideos.map((videoObj)=>
-      <div className={`${PlayListStyles["playlist-card"]}`}>
-         <div  className={`${VideosStyles.videoWrapper}`}>
-        <div className={`${VideosStyles.videoBackground}`}>
-        <img src={videoObj.thumbnail} alt={videoObj.title} className={`${VideosStyles.videoImg}`}></img>
+      <Header />
+      <div className={`${PlayListStyles["playlists-wrapper"]}`}>
+        {playListVideos.map((videoObj) =>
+          <div className={`${PlayListStyles["playlist-card"]}`}>
+            <div className={`${VideosStyles.videoWrapper}`}>
+              <div className={`${VideosStyles.videoBackground}`}>
+                <img src={videoObj.thumbnail} alt={videoObj.title} className={`${VideosStyles.videoImg}`}></img>
+              </div>
+              <div className={`${VideosStyles.videoTitle}`}><h2>{videoObj.title}</h2></div>
+              <span className={`${VideosStyles.videoCreator}`}>{videoObj.creator}</span>
+              <button className={`${VideosStyles["cross-box"]}`} onClick={() => deleteVideoFromPlaylist(playlistId, videoObj._id, eToken, videoActDispatch)}>
+                <span className={`${VideosStyles["cross-icon"]}`}>×</span>
+              </button>
+            </div>
+          </div>
+        )}
       </div>
-      <div className={`${VideosStyles.videoTitle}`}><h2>{videoObj.title}</h2></div>
-      <span className={`${VideosStyles.videoCreator}`}>{videoObj.creator}</span>
-      <button className={`${VideosStyles["cross-box"]}`} onClick={()=>deleteVideoFromPlaylist(playlistId,videoObj._id,eToken,videoActDispatch)}>
-        <span className={`${VideosStyles["cross-icon"]}`}>×</span>
-      </button>
-      </div>
-      </div>
-     
-
-      )}
-      
-    </div>
-    <BottomNav/>
+      <BottomNav />
     </>
   )
 }
