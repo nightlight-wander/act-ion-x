@@ -1,7 +1,6 @@
 import { useAuth } from "../../context/AuthContext";
 import { useVideoActions } from "../../context/VideoActionsContext";
 import VideosStyles from "../../pages/VideoListing/VideoListing.module.css";
-import PlayListStyles from "../../pages/Playlists/Playlists.module.css";
 import { removeFromWatchLater } from "../../services/watchLaterServices";
 
 const WatchLaterCard = ({ watchListObj }) => {
