@@ -21,6 +21,9 @@
 
 @media only screen and (max-width:640px){
     .actionsCat{
-        gap: 4rem;
+        gap: 2rem;
+    }
+    .actionsCat .actionsName{
+        font-size: 1ren;
     }
 }
