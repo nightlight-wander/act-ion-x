@@ -18,11 +18,15 @@ export function BottomNav() {
         videoDispatch({type:IS_GENRES_SET,payload:false});
     }
 
+    const removeCategories=()=>{
+      videoDispatch({type:GET_GENRES,payload:[]});
+    }
+
 
   return (
     <nav className={`${HomeStyles.actionsCat} flex-center`}>
         <Link to="/">
-        <button className={`${HomeStyles.actions} flex-col flex-vCenter`} >
+        <button className={`${HomeStyles.actions} flex-col flex-vCenter`} onClick={()=>removeCategories()} >
           <span className="material-icons">
             restart_alt
           </span>

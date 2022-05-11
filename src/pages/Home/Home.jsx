@@ -4,13 +4,12 @@ import { BottomNav } from "../../components/BottomNav/BottomNav";
 import { GenreSlider } from "../../components/GenreSlider/GenreSlider";
 import axios from "axios";
 import { useEffect } from "react";
-import { GET_CATEGORIES } from "../../utilities/actions-types";
+import { GET_CATEGORIES} from "../../utilities/actions-types";
 
 
 
 const Home = () => {
   const { videoStates:{categories},videoDispatch} = useVideos();
-  // console.log(videoStates)
 
   useEffect(()=>{
     (async()=>{
@@ -23,6 +22,7 @@ const Home = () => {
     })()
     // eslint-disable-next-line
 },[categories])
+
 
   return (
     <div>
@@ -37,9 +37,6 @@ const Home = () => {
           return <div key={catObj._id}>
             <img src={catObj.catImg} className={`${HomeStyles.catImg}`} style={{ height: "220px", width: "220px", maxInlineSize: "100%", objectFit: "contain cover" }} alt={catObj.category}>
             </img>
-            {/* {catObj.genre.map(genreArraysOfObs=>{
-              return <div className={`${HomeStyles.randomText} ${HomeStyles.randomMargin}`}>{genreArraysOfObs.genreName}</div>
-            })} */}
           </div>
 
         }

@@ -8,7 +8,7 @@ const videoInitialStates={
     categories:[],
     genres:[],
     selectGenre:[],
-    category:0,
+    category:null,
     videos:[],
     isGenres:false
 }
