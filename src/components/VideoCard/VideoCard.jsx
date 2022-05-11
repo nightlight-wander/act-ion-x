@@ -13,7 +13,6 @@ const VideoCard = ({ videoObj }) => {
     const [modal, setModal] = useState(false);
     const { eToken } = useAuth();
     const navigate = useNavigate();
-    console.log("a");
 
     const onWatchLater = async (e, videoObj) => {
         e.stopPropagation();
@@ -38,9 +37,10 @@ const VideoCard = ({ videoObj }) => {
             <div className={`${VideosStyles.videoTitle}`}><h2>{videoObj.title}</h2></div>
             <span className={`${VideosStyles.videoCreator}`}>{videoObj.creator}</span>
             <div className={`${VideosStyles.videoIcon}`}>
-                <span className={` material-icons material-icons-outlined`} onClick={(e) => onWatchLater(e, videoObj)}>
+                <span className={` ${isVideoFound(watchLater,videoObj) ? `${VideosStyles.activeIfNotFound}` : ""} material-icons material-icons-outlined `} onClick={(e) => onWatchLater(e, videoObj)}>
                     watch_later
                 </span>
+                
                 <span class="material-icons" onClick={() => modalHandle()}>
                     add_circle
                 </span>

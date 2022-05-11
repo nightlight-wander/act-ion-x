@@ -91,6 +91,10 @@
     font-weight: 600;
 }
 
+.videoIcon .activeIfNotFound{
+    color: var(--tomatoOrange);
+}
+
 .videosWrapper .modal-wrapper{
     position: fixed;
     top:10rem;

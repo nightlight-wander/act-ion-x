@@ -110,6 +110,10 @@
     color: var(--purple-main);
 }
 
+.video-actions a:hover{
+    color: var(--light-red);
+}
+
 /* responsive navigation*/
 
 @media only screen and (max-width:1300px) {
