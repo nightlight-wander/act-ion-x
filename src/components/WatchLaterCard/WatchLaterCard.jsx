@@ -8,7 +8,7 @@ const WatchLaterCard = ({ watchListObj }) => {
     const { videoActDispatch } = useVideoActions();
     const { eToken } = useAuth();
     return (
-        <div className={`${PlayListStyles["playlists-wrapper"]}`}>
+        <div className={`${VideosStyles["videosWrapper"]}`}>
                 <div className={`${VideosStyles.videoBackground}`}>
                     <img src={watchListObj.thumbnail} alt={watchListObj.title} className={`${VideosStyles.videoImg}`}></img>
                 </div>
