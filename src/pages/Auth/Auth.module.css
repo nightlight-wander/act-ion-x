@@ -8,8 +8,7 @@
     height: 100%;
     width: 100%;
     background-color: var(--purple-main);
-    background: -webkit-linear-gradient(to right, var(--purple-main), var(--tomatoOrange)); 
-    background: linear-gradient(to right, var(--purple-main), var(--tomatoOrange));
+        background-image: radial-gradient( circle farthest-corner at 10.2% 55.8%,  rgba(252,37,103,1) 0%, rgba(250,38,151,1) 46.2%, rgba(186,8,181,1) 90.1% );
     color: var(--yellowGold);
 }
 
@@ -99,41 +98,24 @@
 }
 
 /*Login Button CSS  */
-.btn-slide{
-    border: none;
-    width: 35rem;
-    max-width: 90%;
-    height: 2.1em;
-    border-radius: 2.1em;
-    font-size: 2rem;
-    font-family: inherit;
-    font-weight: 500;
-    position: relative;
-    overflow: hidden;
-    z-index: 2;
+
+.btn-primary{
+    /* background-color: var(--purple-main); */
     border: 2px solid var(--yellowGold);
-    vertical-align: middle;
+    border-radius: 0;
+    color: var(--gold1);
+    font-size: 1.7rem;
+    padding: 0.8rem 1.4rem;
+    text-transform: capitalize;
+    text-transform: uppercase;
+    width: 35rem;
+    max-width: 76%;
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    
 }
 
-.btn-slide::before{
-    content: "";
-    width: 0;
-    height: 2.2em;
-    border-radius: 2.1em;
-    top: 0;
-    left: 0;
-    position: absolute;
-    background-image: linear-gradient(to right,var( --purple-main) 0%,var(--gold1) 100%);
-    display: block;
-    transition: .5s ease;
-    z-index: -1;
-
-}
-
-.btn-slide:hover::before{
-    width: 40rem;
+.btn-primary:hover{
+    background-color: var(--purple-main-1);
 }

@@ -5,10 +5,10 @@ const PlaylistModal = ({children,show,close}) => {
     <div className={`${VideosStyles["modal-wrapper"]}`}>
         {show &&
         <div>{children}
-        <button onClick={close}>X</button></div>
+        <button onClick={close} className={`${VideosStyles["modal-close-btn"]}`}>X</button></div>
         }
     </div>
   )
 }
 
-export {PlaylistModal};
+export {PlaylistModal}; 

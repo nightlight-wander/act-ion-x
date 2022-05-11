@@ -50,9 +50,9 @@ const Login = () => {
                                     Password<span className={`${AuthStyles["req-feild"]}`}>*</span>
                                 </label>
                                 <input name="password" id="password"  type="password" className={`${AuthStyles["text-input"]}`} />
-                                <span className={`${AuthStyles["eye-icon"]} material-icons material-icons-outlined`}>
+                                {/* <span className={`${AuthStyles["eye-icon"]} material-icons material-icons-outlined`}>
                                     visibility
-                                </span>
+                                </span> */}
                             </div>
                             {/* <div className="password-wrapper d-flex ">
                                 <div className="remeber-box">
@@ -64,13 +64,13 @@ const Login = () => {
                                 </div>
                             </div> */}
                             
-                            <button className={`${AuthStyles["btn-slide"]} ${AuthStyles["login-btn"]} button flex-center`}>Sign In</button>
+                            <button className={`${AuthStyles["btn-primary"]} ${AuthStyles["login-btn"]} button flex-center`}>Sign In</button>
                         </form>
-                        <button className={`${AuthStyles["btn-slide"]} ${AuthStyles["test-btn"]} button`} onClick={guestLogin}>Guest Login</button>
+                        <button className={`${AuthStyles["btn-primary"]} ${AuthStyles["test-btn"]} button`} onClick={guestLogin}>Guest Login</button>
                     <div className={`${AuthStyles["sign-link"]}`}><Link to="/Signup">Create New Account</Link></div>
                 </div>
             </main>
-            </div> 
+            </div>  
     )
 }
 

@@ -23,6 +23,10 @@ const VideoCard = ({ videoObj }) => {
         return watchLater.find(videoItem => videoItem._id === selectedVideo._id);
     }
 
+    const modalHandle=()=>{
+        eToken?setModal(true):navigate("/login");
+    }
+
     return (
         <>
         <div className={`${VideosStyles.videoWrapper}`}>
@@ -37,16 +41,16 @@ const VideoCard = ({ videoObj }) => {
                 <span className={` material-icons material-icons-outlined`} onClick={(e) => onWatchLater(e, videoObj)}>
                     watch_later
                 </span>
-                <span class="material-icons" onClick={() => setModal(true)}>
+                <span class="material-icons" onClick={() => modalHandle()}>
                     add_circle
                 </span>
             </div>
            
         </div>
-        <PlaylistModal show={modal} close={() => setModal(false)}  style={{position:"absolute"}}>
+        <PlaylistModal show={modal} close={() => setModal(false)} >
                     <ModalForm />
                     <PlayListsBox videoObj={videoObj} />
-            </PlaylistModal>
+        </PlaylistModal>
         </>
     )
 }

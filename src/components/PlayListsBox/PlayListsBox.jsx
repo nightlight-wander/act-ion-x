@@ -1,6 +1,7 @@
 import { useVideoActions } from "../../context/VideoActionsContext";
 import { postVideoToPlaylist } from "../../services/playListServices";
 import { useAuth } from "../../context/AuthContext";
+import VideoStyles from "../../pages/VideoListing/VideoListing.module.css";
 
 const PlayListsBox = ({videoObj}) => {
     const {videoActStates:{playlists},videoActDispatch}=useVideoActions();
@@ -10,9 +11,9 @@ const PlayListsBox = ({videoObj}) => {
     }
 
   return (
-    <div>
+    <div className={`${VideoStyles["playlists-wrapper"]}`}>
         {playlists.map((playlist)=>{
-            return <div key={playlist._id} onClick={()=>playListHandle(playlist)} >{playlist.title}</div>
+            return <div key={playlist._id} onClick={()=>playListHandle(playlist)} className={`${VideoStyles["playlist-title"]}`}>{playlist.title}</div>
         })}
     </div>
   )
