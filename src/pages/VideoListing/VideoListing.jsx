@@ -20,7 +20,7 @@ const VideoListing = () => {
       <Header />
       <div className={`${VideosStyles.videosWrapper}`}>
         {videos.map((videoObj) => (
-          <VideoCard videoObj={videoObj}
+          <VideoCard key ={videoObj._id} videoObj={videoObj}
           />
         ))}
       </div>

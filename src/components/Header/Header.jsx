@@ -10,18 +10,15 @@ const Header = () => {
       <div className={`${HeaderStyles["logo-head"]} flex-vCenter`} >
         <Link to="/" className={`${HeaderStyles["logo-name"]}`}>ACT-IONS</Link>
       </div>
-      <input type="checkbox" id="nav-toggle" className={`${HeaderStyles["nav-toggle"]}`} />
-
-      <label htmlFor="nav-toggle" className={`${HeaderStyles["nav-toggle-label"]}`}>
-        <span></span>
-      </label>
-
       <div className={`${HeaderStyles["search-bar"]}`}>
         <input type="text" className={`${HeaderStyles["search-input"]}`} placeholder="Search" aria-label="search" />
         <button className={`${HeaderStyles["submit-btn"]}`}><span className=" material-icons material-icons-outlined search-submit">
           search</span></button>
       </div>
+      <input type="checkbox" id="nav-toggle" className={`${HeaderStyles["nav-toggle"]}`} />
+
       <div className={`${HeaderStyles["video-actions"]} flex-vCenter`}>
+        
         <Link to="/playlists" className={`flex-col flex-vCenter`}>
           <span class="material-icons">
             playlist_add
@@ -34,7 +31,6 @@ const Header = () => {
           </span>
           <span className={`${HeaderStyles["video-actions-title"]}`}>Watch Later</span>
         </Link>
-
         <Link to="/history" className={`flex-col flex-vCenter`}>
           <span class=" material-icons material-icons-outlined">
             history
@@ -60,7 +56,14 @@ const Header = () => {
           <span className={`${HeaderStyles["video-actions-title"]}`}>Profile</span>
         </Link>
         }
+       
       </div>
+      <label htmlFor="nav-toggle" className={`${HeaderStyles["nav-toggle-label"]}`}>
+        <span></span>
+      </label>
+
+     
+     
     </header>
   )
 }

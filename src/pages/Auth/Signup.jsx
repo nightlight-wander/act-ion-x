@@ -46,9 +46,9 @@ const Signup = () => {
                                 Password<span className={`${AuthStyles["req-feild"]}`}>*</span>
                             </label>
                             <input name="password" id="password" type="password" className={`${AuthStyles["text-input"]}`}/>
-                            <span className={`${AuthStyles["eye-icon1"]} material-icons material-icons-outlined`}>
+                            {/* <span className={`${AuthStyles["eye-icon1"]} material-icons material-icons-outlined`}>
                                     visibility
-                                </span>
+                                </span> */}
 
                             {/* <label htmlFor="password1" className="text-label sp4-mg-lr">
                                 Confirm Password<span className="req-feild">*</span>
@@ -58,7 +58,7 @@ const Signup = () => {
                                     visibility
                                 </span> */}
                         </div>
-                        <button className={`${AuthStyles["btn-slide"]} ${AuthStyles["login-btn"]} button flex-center`}>Sign Up</button>
+                        <button className={`${AuthStyles["btn-primary"]} ${AuthStyles["login-btn"]} button flex-center`}>Sign Up</button>
                         {/* <button>submit</button> */}
                     </form>
                 <div className={`${AuthStyles["sign-link"]}`}><Link to="/Login">Already have an account</Link></div>
