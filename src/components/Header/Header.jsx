@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import { useState,useEffect } from "react";
 import { useVideos } from "../../context/VideosContest";
-import { GET_VIDEOS, GET_VIDEOS_BY_QUERY } from "../../utilities/actions-types";
+import { GET_VIDEOS_BY_QUERY } from "../../utilities/actions-types";
 
 const Header = () => {
   const { eToken } = useAuth();
@@ -23,6 +23,7 @@ const Header = () => {
   const updateDebounceText=debounce(text=>setSearchQuery(()=>text));
   useEffect(()=>{
     fetchVideosByQuery();
+    // eslint-disable-next-line
   },[searchQuery])
 
   const fetchVideosByQuery=()=>{
