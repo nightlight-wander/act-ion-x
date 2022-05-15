@@ -8,7 +8,7 @@ import { fetchVideosByCat } from "../../services/videosCatsServices";
 import { VideoCard } from "../../components/VideoCard/VideoCard";
 
 const VideoListing = () => {
-  const { videoDispatch, videoStates: { category, selectGenre, isGenres, videos } } = useVideos();
+  const { videoDispatch, videoStates: { category, selectGenre, isGenres, videos,videosByQuery } } = useVideos();
 
   useEffect(() => {
     (fetchVideosByCat())(videoDispatch, category, selectGenre, isGenres);
@@ -19,7 +19,7 @@ const VideoListing = () => {
     <>
       <Header />
       <div className={`${VideosStyles.videosWrapper}`}>
-        {videos.map((videoObj) => (
+        {(videosByQuery??videos).map((videoObj) => (
           <VideoCard key ={videoObj._id} videoObj={videoObj}
           />
         ))}

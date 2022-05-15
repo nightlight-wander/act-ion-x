@@ -1,5 +1,5 @@
 import { createContext,useContext,useReducer} from "react";
-import { GET_CATEGORIES, GET_GENRES, GET_VIDEOS, IS_GENRES_SET, SELECT_GENRES, SET_CATEGORY } from "../utilities/actions-types";
+import { GET_CATEGORIES, GET_GENRES, GET_VIDEOS, GET_VIDEOS_BY_QUERY, IS_GENRES_SET, SELECT_GENRES, SET_CATEGORY } from "../utilities/actions-types";
 
 const VideosContext=createContext();
 const useVideos=()=>useContext(VideosContext);
@@ -10,6 +10,7 @@ const videoInitialStates={
     selectGenre:[],
     category:0,
     videos:[],
+    videosByQuery:null,
     isGenres:false
 }
 
@@ -31,6 +32,12 @@ const videoReducerFunc=(state,action)=>{
             return {
                 ...state,
                 videos:action.payload
+            }
+        }
+        case GET_VIDEOS_BY_QUERY:{
+            return {
+                ...state,
+                videosByQuery:action.payload
             }
         }
         case GET_GENRES:{
