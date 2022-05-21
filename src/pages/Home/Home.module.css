@@ -99,7 +99,7 @@
     /* overflow-x: scroll; */
 }
 
-.genreBtn:focus{
+.genreBtn:hover{
     background-color:var(--purple-main);
     color:var(--yellowGold);
 }
