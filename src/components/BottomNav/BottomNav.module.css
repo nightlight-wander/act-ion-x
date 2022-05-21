@@ -14,8 +14,7 @@
     color: var(--yellowGold);
 }
 
-.actionsCat .actions:hover{
-  
+.actionsCat .actions:hover,.actionsCat .actions:focus{
     color:var(--pink5);
 }
 

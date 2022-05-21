@@ -1,11 +1,11 @@
-import { useParams } from "react-router-dom";
+import { useParams,Link } from "react-router-dom";
 import { BottomNav } from "../../components/BottomNav/BottomNav";
 import { Header } from "../../components/Header/Header";
 import { useVideoActions } from "../../context/VideoActionsContext";
 import VideosStyles from "../../pages/VideoListing/VideoListing.module.css";
 import PlayListStyles from "../Playlists/Playlists.module.css";
 import { deleteVideoFromPlaylist } from "../../services/playListServices";
-import { useAuth } from "../../context/AuthContext";
+import { useAuth } from "../../context/AuthContext"; 
 
 const SinglePlaylist = () => {
   const { playlistId } = useParams();
@@ -19,11 +19,13 @@ const SinglePlaylist = () => {
     <>
       <Header />
       <div className={`${PlayListStyles["playlists-wrapper"]}`}>
-        {playListVideos.map((videoObj) =>
+        {playListVideos?.map((videoObj) =>
           <div className={`${PlayListStyles["playlist-card"]}`}>
             <div className={`${VideosStyles.videoWrapper}`}>
               <div className={`${VideosStyles.videoBackground}`}>
+              <Link to={`/video/${videoObj._id}`}>
                 <img src={videoObj.thumbnail} alt={videoObj.title} className={`${VideosStyles.videoImg}`}></img>
+              </Link>
               </div>
               <div className={`${VideosStyles.videoTitle}`}><h2>{videoObj.title}</h2></div>
               <span className={`${VideosStyles.videoCreator}`}>{videoObj.creator}</span>

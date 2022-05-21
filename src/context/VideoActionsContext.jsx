@@ -1,5 +1,5 @@
 import { createContext, useContext, useReducer } from "react";
-import { UPDATE_CURPLAYLIST,  PLAYLISTS, WATCH_LATER} from "../utilities/actions-types";
+import { UPDATE_CURPLAYLIST,  PLAYLISTS, WATCH_LATER, HISTORY} from "../utilities/actions-types";
 const VideoActionsContext = createContext();
 const useVideoActions = () => useContext(VideoActionsContext);
 
@@ -19,7 +19,7 @@ const videoActionsReducerFunc = (state, action) => {
         case WATCH_LATER:
             return {
                 ...state,
-                watchLater: action.payload
+                watchLater: action.payload 
             }
         case PLAYLISTS:
             return {
@@ -33,6 +33,12 @@ const videoActionsReducerFunc = (state, action) => {
                     playlist._id === action.payload._id
                         ? { ...playlist, videos: action.payload.videos } : playlist)
             }
+        case HISTORY:{
+            return{
+                ...state,
+                history:action.payload
+            }
+        }
         default:
             return state
     }

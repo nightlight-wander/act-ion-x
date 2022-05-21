@@ -7,6 +7,7 @@ const PlayListsBox = ({videoObj}) => {
     const {videoActStates:{playlists},videoActDispatch}=useVideoActions();
     const {eToken}=useAuth();
     const playListHandle=(playlist)=>{
+      console.log(playlist);
            postVideoToPlaylist(videoObj,playlist._id,videoActDispatch,eToken) 
     }
 

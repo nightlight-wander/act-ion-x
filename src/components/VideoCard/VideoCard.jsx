@@ -14,7 +14,7 @@ const VideoCard = ({ videoObj }) => {
     const { eToken } = useAuth();
     const navigate = useNavigate();
 
-    const onWatchLater = async (e, videoObj) => {
+    const onWatchLater = (e, videoObj) => {
         e.stopPropagation();
         eToken ? !isVideoFound(watchLater, videoObj) ? addToWatchLater(videoObj, eToken, videoActDispatch) : removeFromWatchLater(videoObj, eToken, videoActDispatch) : navigate("/login");
     }
@@ -23,7 +23,7 @@ const VideoCard = ({ videoObj }) => {
     }
 
     const modalHandle=()=>{
-        eToken?setModal(true):navigate("/login");
+        eToken?setModal(true):navigate("/login"); 
     }
 
     return (
