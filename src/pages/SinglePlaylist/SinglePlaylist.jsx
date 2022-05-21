@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams,Link } from "react-router-dom";
 import { BottomNav } from "../../components/BottomNav/BottomNav";
 import { Header } from "../../components/Header/Header";
 import { useVideoActions } from "../../context/VideoActionsContext";
@@ -23,7 +23,9 @@ const SinglePlaylist = () => {
           <div className={`${PlayListStyles["playlist-card"]}`}>
             <div className={`${VideosStyles.videoWrapper}`}>
               <div className={`${VideosStyles.videoBackground}`}>
+              <Link to={`/video/${videoObj._id}`}>
                 <img src={videoObj.thumbnail} alt={videoObj.title} className={`${VideosStyles.videoImg}`}></img>
+              </Link>
               </div>
               <div className={`${VideosStyles.videoTitle}`}><h2>{videoObj.title}</h2></div>
               <span className={`${VideosStyles.videoCreator}`}>{videoObj.creator}</span>
