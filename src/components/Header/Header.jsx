@@ -35,6 +35,10 @@ const Header = () => {
     }
   }
 
+  const headLinkStyles=({isActive}) => ({
+    color: isActive ? `var(--light-red)` : ""
+  })
+
   return (
     <header className={`${HeaderStyles.header}`}>
       <div className={`${HeaderStyles["logo-head"]} flex-vCenter`} >
@@ -49,25 +53,19 @@ const Header = () => {
 
       <div className={`${HeaderStyles["video-actions"]} flex-vCenter`}>
         
-        <NavLink to="/playlists" className={`flex-col flex-vCenter`} style={({isActive}) => ({
-    color: isActive ? `var(--light-red)` : ""
-  })}>
+        <NavLink to="/playlists" className={`flex-col flex-vCenter`} style={headLinkStyles}>
           <span class="material-icons">
             playlist_add
           </span>
           <span className={`${HeaderStyles["video-actions-title"]}`}>Playlist</span>
         </NavLink>
-        <NavLink to="/watch-later" className={`flex-col flex-vCenter`} style={({isActive}) => ({
-    color: isActive ? `var(--light-red)` : ""
-  })}>
+        <NavLink to="/watch-later" className={`flex-col flex-vCenter`} style={headLinkStyles}>
           <span class="material-icons">
             watch_later
           </span>
           <span className={`${HeaderStyles["video-actions-title"]}`}>Watch Later</span>
         </NavLink>
-        <NavLink to="/history" className={`flex-col flex-vCenter`} style={({isActive}) => ({
-    color: isActive ? `var(--light-red)` : ""
-  })}>
+        <NavLink to="/history" className={`flex-col flex-vCenter`} style={headLinkStyles}>
           <span class=" material-icons material-icons-outlined">
             history
           </span>
@@ -81,17 +79,13 @@ const Header = () => {
           </span>
           <span className={`${HeaderStyles["video-actions-title"]}`}>Liked</span>
         </NavLink> */}
-        {!eToken ? <NavLink to="/login" className={`flex-col flex-vCenter`} style={({isActive}) => ({
-    color: isActive ? `var(--light-red)` : ""
-  })}>
+        {!eToken ? <NavLink to="/login" className={`flex-col flex-vCenter`} style={headLinkStyles}>
           <span class="material-icons">
             perm_identity
           </span>
           <span className={`${HeaderStyles["video-actions-title"]}`}>Login</span>
         </NavLink> :
-        <NavLink to="/profile" className={`flex-col flex-vCenter`} style={({isActive}) => ({
-          color: isActive ? `var(--light-red)` : ""
-        })}>
+        <NavLink to="/profile" className={`flex-col flex-vCenter`} style={headLinkStyles}>
           <span class="material-icons">
             perm_identity
           </span>

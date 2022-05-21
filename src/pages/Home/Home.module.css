@@ -99,8 +99,9 @@
     /* overflow-x: scroll; */
 }
 
-.genreBtnActive{
-    background-color:pink;
+.genreBtn:focus{
+    background-color:var(--purple-main);
+    color:var(--yellowGold);
 }
 
 /* .genreNamesWrapper{
