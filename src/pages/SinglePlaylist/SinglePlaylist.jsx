@@ -5,7 +5,7 @@ import { useVideoActions } from "../../context/VideoActionsContext";
 import VideosStyles from "../../pages/VideoListing/VideoListing.module.css";
 import PlayListStyles from "../Playlists/Playlists.module.css";
 import { deleteVideoFromPlaylist } from "../../services/playListServices";
-import { useAuth } from "../../context/AuthContext";
+import { useAuth } from "../../context/AuthContext"; 
 
 const SinglePlaylist = () => {
   const { playlistId } = useParams();

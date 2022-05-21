@@ -21,7 +21,7 @@ export function BottomNav() {
     const removeCategories=()=>{
       videoDispatch({type:GET_GENRES,payload:[]});
     }
-
+ 
 
   return (
     <nav className={`${HomeStyles.actionsCat} flex-center`}>

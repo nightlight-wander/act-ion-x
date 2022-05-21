@@ -5,6 +5,13 @@ import { IS_GENRES_SET, SELECT_GENRES } from '../../utilities/actions-types';
 
 const GenreSlider = () => {
   const { videoStates:{genres,selectGenre},videoDispatch} = useVideos();
+
+  const genreStyles={
+  
+      backgrounColor:genres.includes(selectGenre)?"yellow":""
+  
+  }
+
   const GenreHandler = (genreObj) => {
     const selectedGenre = genres.reduce((curTotal, curObj) => curObj.genreName === genreObj.genreName  ? genreObj.genreName : curTotal, "");
     (!selectGenre.includes(selectedGenre))?videoDispatch({type:SELECT_GENRES,payload:[...selectGenre,selectedGenre]}):videoDispatch({type:SELECT_GENRES,payload:selectGenre})
@@ -14,10 +21,12 @@ const GenreSlider = () => {
   return (
     <div className={`${HomeStyles.genreSlider} flex-center`}>
       {genres.map(genreObj => {
-        return <button key={genreObj._id} className={`${HomeStyles.genreBtn}`} onClick={() => GenreHandler(genreObj)}>{genreObj.genreName}</button>
+        return <button key={genreObj._id} className={`${HomeStyles.genreBtn}`} onClick={() => GenreHandler(genreObj)} style={genreStyles}>{genreObj.genreName}</button>
       })}
     </div>
-  )
+  ) 
 }
-
+ 
 export { GenreSlider };
+
+// 

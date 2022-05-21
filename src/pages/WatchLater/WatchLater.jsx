@@ -17,6 +17,6 @@ const WatchLater = () => {
       <BottomNav/>
     </div>
   )
-}
+} 
 
 export {WatchLater};
