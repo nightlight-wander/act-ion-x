@@ -19,7 +19,7 @@ const SinglePlaylist = () => {
     <>
       <Header />
       <div className={`${PlayListStyles["playlists-wrapper"]}`}>
-        {playListVideos.map((videoObj) =>
+        {playListVideos?.map((videoObj) =>
           <div className={`${PlayListStyles["playlist-card"]}`}>
             <div className={`${VideosStyles.videoWrapper}`}>
               <div className={`${VideosStyles.videoBackground}`}>
