@@ -13,7 +13,7 @@ export const addToHistory=async(singleVideo,eToken,videoActDispatch)=>{
 export const removeFromHistory=async(videoObj,eToken,videoActDispatch)=>{
     try{
         const response=await axios.delete(`/api/user/history/${videoObj._id}`,{headers:{authorization:eToken}});
-        videoActDispatch({type:HISTORY,payload:response.data.watchlater});
+        videoActDispatch({type:HISTORY,payload:response.data.history});
     }catch(error){
         console.log(error);
     }

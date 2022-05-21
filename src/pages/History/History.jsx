@@ -33,7 +33,7 @@ const History = () => {
               <span className={`${VideosStyles.videoCreator}`}>
                 {videoObj?.creator}
               </span>
-              <button className={`${VideosStyles["cross-box"]}`} onClick={() =>removeFromHistory(videoObj._id, eToken, videoActDispatch)}>
+              <button className={`${VideosStyles["cross-box"]}`} onClick={() =>removeFromHistory(videoObj, eToken, videoActDispatch)}>
              <span className={`${VideosStyles["cross-icon"]}`}>×</span>
            </button> 
              </div>

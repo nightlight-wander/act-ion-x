@@ -18,11 +18,12 @@ const SingleVideo = () => {
     const { _id, title, creator, thumbnail } = singleVideo;
     
     const isVideoInHistory=()=>{
-        return history.find(item=>item._id===_id)
+        return history?.find(item=>item._id===_id)
     }
 
     useEffect(()=>{
         if(!isVideoInHistory() && (Object.keys(singleVideo).length>=1) && eToken) addToHistory(singleVideo,eToken,videoActDispatch)
+        // eslint-disable-next-line
     },[singleVideo])
 
     return (
