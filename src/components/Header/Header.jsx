@@ -28,7 +28,7 @@ const Header = () => {
 
   const fetchVideosByQuery=()=>{
     if(searchQuery!==""){
-      const videosByQuery=videos.videos.filter((video)=>video.title.trim().toLowerCase().includes(searchQuery));
+      const videosByQuery=videos.videos.filter((video)=>video.title.trim().toLowerCase().includes(searchQuery)||video.title.trim().toLowerCase().split().includes(searchQuery));
       videoDispatch({type:GET_VIDEOS_BY_QUERY,payload:[...videosByQuery]})
     }else{
       videoDispatch({type:GET_VIDEOS_BY_QUERY,payload:null})
