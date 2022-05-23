@@ -20,7 +20,7 @@
 }
 
 .playlists-wrapper{
-    margin:4rem;
+    margin:4rem 4rem 10rem;
     min-height: 60rem;
     display: flex;
     flex-wrap: wrap;

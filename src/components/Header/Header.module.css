@@ -84,10 +84,6 @@
 
 }
 
-/* .search-bar .submit-btn .search-icon{
-  color:var(--pink8)
-} */
-
 
 .nav-toggle  {
     /* position: absolute;
@@ -111,7 +107,7 @@
 }
 
 .video-actions a:hover{
-    color: var(--light-red);
+    color: var(--blackl1);
 }
 
 /* responsive navigation*/
@@ -138,10 +134,7 @@
         width: 45%;
     }
 
-    /* .header {
-        width: 100%;
-    } */
-
+  
     .nav-toggle  {
         position: absolute;
         top: 2rem;

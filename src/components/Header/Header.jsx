@@ -36,7 +36,7 @@ const Header = () => {
   }
 
   const headLinkStyles=({isActive}) => ({
-    color: isActive ? `var(--light-red)` : ""
+    color: isActive ? `var(--blackl1)` : "",
   })
 
   return (

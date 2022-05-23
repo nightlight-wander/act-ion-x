@@ -99,10 +99,10 @@
     /* overflow-x: scroll; */
 }
 
-.genreBtn:hover{
+/* .genreBtn:hover{
     background-color:var(--purple-main);
     color:var(--yellowGold);
-}
+} */
 
 /* .genreNamesWrapper{
     min-width: 5rem;
