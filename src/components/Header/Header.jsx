@@ -37,12 +37,17 @@ const Header = () => {
 
   const headLinkStyles=({isActive}) => ({
     color: isActive ? `var(--blackl1)` : "",
+    transform: isActive?`translateY(-3px)`:"",
   })
+
 
   return (
     <header className={`${HeaderStyles.header}`}>
       <div className={`${HeaderStyles["logo-head"]} flex-vCenter`} >
-        <NavLink to="/" className={`${HeaderStyles["logo-name"]}`}>ACT-IONS</NavLink>
+        <NavLink to="/" className={`${HeaderStyles["logo-name"]}`}>
+          ACT-IONS
+          <span className={`${HeaderStyles["logo-icon"]}`}></span>
+        </NavLink>
       </div>
       <div className={`${HeaderStyles["search-bar"]}`}>
         <input type="text" className={`${HeaderStyles["search-input"]}`} placeholder="Search" aria-label="search" onChange={(e)=>updateDebounceText(e.target.value)}/>
@@ -54,19 +59,19 @@ const Header = () => {
       <div className={`${HeaderStyles["video-actions"]} flex-vCenter`}>
         
         <NavLink to="/playlists" className={`flex-col flex-vCenter`} style={headLinkStyles}>
-          <span class="material-icons">
+          <span className={`material-icons ${HeaderStyles["icon"]}`}>
             playlist_add
           </span>
           <span className={`${HeaderStyles["video-actions-title"]}`}>Playlist</span>
         </NavLink>
         <NavLink to="/watch-later" className={`flex-col flex-vCenter`} style={headLinkStyles}>
-          <span class="material-icons">
+          <span className={`material-icons ${HeaderStyles["icon"]}`}>
             watch_later
           </span>
           <span className={`${HeaderStyles["video-actions-title"]}`}>Watch Later</span>
         </NavLink>
         <NavLink to="/history" className={`flex-col flex-vCenter`} style={headLinkStyles}>
-          <span class=" material-icons material-icons-outlined">
+          <span className={`material-icons material-icons-outlined ${HeaderStyles["icon"]}`}>
             history
           </span>
           <span className={`${HeaderStyles["video-actions-title"]}`}>History</span>
@@ -80,13 +85,13 @@ const Header = () => {
           <span className={`${HeaderStyles["video-actions-title"]}`}>Liked</span>
         </NavLink> */}
         {!eToken ? <NavLink to="/login" className={`flex-col flex-vCenter`} style={headLinkStyles}>
-          <span class="material-icons">
+          <span className={`material-icons ${HeaderStyles["icon"]}`}>
             perm_identity
           </span>
           <span className={`${HeaderStyles["video-actions-title"]}`}>Login</span>
         </NavLink> :
         <NavLink to="/profile" className={`flex-col flex-vCenter`} style={headLinkStyles}>
-          <span class="material-icons">
+          <span className={`material-icons ${HeaderStyles["icon"]}`}>
             perm_identity
           </span>
           <span className={`${HeaderStyles["video-actions-title"]}`}>Profile</span>

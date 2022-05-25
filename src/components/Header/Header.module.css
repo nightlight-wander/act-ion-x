@@ -13,18 +13,68 @@
     font-size: 1.6rem;
     font-weight: 900;
     color: var(--purple-main);
-    margin: 2rem 0 0.5rem 0;
+    /* margin: 2rem 0 0.5rem 0; */
 }
 
 .logo-name:hover {
     color: var(--yellowGold);
 }
 
+.logo-icon{
+    display:inline-block;
+
+    animation-name:rotate;
+    animation-duration:40s;
+    animation-iteration-function:infinite;
+    animation-timing-function:linear;
+}
+
+.logo-icon , .logo-icon:before , .logo-icon:after{
+    position:absolute;
+    /* top:2rem; */
+    display:inline-block;
+    width:87px;
+    height:12px;
+    border-radius:50%;
+    border:3px solid var(--pink4);
+}
+
+.logo-name,.nucleo , .logo-icon , .logo-icon:before , .logo-icon:after{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.logo-icon:before ,.logo-icon:after{
+    content:"";
+}
+
+.logo-icon:after{
+    transform:rotate(-75deg);
+}
+
+.logo-icon:before{
+    transform:rotate(75deg);
+}
+
+@keyframes rotate{
+    100%{
+      transform:rotate(360deg);
+    }
+}
+
 .logo-head{
     background: none;
     margin-left: 4rem;
+    position:relative;
+    top:0;
+    width:250px;
+    height:110px;
+
     display: flex;
     align-items: center;
+    justify-content:center;
 }
 
 .search-bar {
@@ -104,6 +154,12 @@
 }
 .video-actions a{
     color: var(--purple-main);
+}
+
+.video-actions a .icon{
+    background-color: var(--purple-main-2);
+    border-radius: 100%;
+    padding: 1rem;
 }
 
 .video-actions a:hover{

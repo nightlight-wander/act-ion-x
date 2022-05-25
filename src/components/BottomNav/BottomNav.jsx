@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useVideos } from '../../context/VideosContest';
-import { GET_GENRES, IS_GENRES_SET, SELECT_GENRES, SET_CATEGORY } from '../../utilities/actions-types';
+import { GET_GENRES, IS_GENRES_SET,SET_CATEGORY,SELECTED_GENRE} from '../../utilities/actions-types';
 
 import HomeStyles from "./BottomNav.module.css";
 
@@ -13,7 +13,7 @@ export function BottomNav() {
           return curObj.category === categories[Number(selectedCat)].category ? curObj.genre : curTotal
         },[])
         videoDispatch({type:GET_GENRES,payload:genresArray});
-        videoDispatch({type:SELECT_GENRES,payload:[]});
+        videoDispatch({type:SELECTED_GENRE,payload:""});
         videoDispatch({type:SET_CATEGORY,payload:selectedCat});
         videoDispatch({type:IS_GENRES_SET,payload:false});
     }
