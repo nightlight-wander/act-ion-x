@@ -41,7 +41,7 @@ const VideoCard = ({ videoObj }) => {
                     watch_later
                 </span>
                 
-                <span class="material-icons" onClick={() => modalHandle()}>
+                <span className="material-icons" onClick={() => modalHandle()}>
                     add_circle
                 </span>
             </div>

@@ -1,5 +1,5 @@
 import { createContext,useContext,useReducer} from "react";
-import { GET_CATEGORIES, GET_GENRES, GET_VIDEOS, GET_VIDEOS_BY_QUERY, IS_GENRES_SET, SELECT_GENRES, SET_CATEGORY } from "../utilities/actions-types";
+import { GET_CATEGORIES, GET_GENRES, GET_VIDEOS, GET_VIDEOS_BY_QUERY, IS_GENRES_SET, SELECTED_GENRE,  SET_CATEGORY } from "../utilities/actions-types";
 
 const VideosContext=createContext();
 const useVideos=()=>useContext(VideosContext);
@@ -7,11 +7,12 @@ const useVideos=()=>useContext(VideosContext);
 const videoInitialStates={
     categories:[],
     genres:[],
-    selectGenre:[],
+    // selectGenre:[],
     category:0,
     videos:[],
     videosByQuery:null,
-    isGenres:false
+    isGenres:false,
+    currentGenre:"",
 }
 
 const videoReducerFunc=(state,action)=>{
@@ -21,13 +22,13 @@ const videoReducerFunc=(state,action)=>{
                 ...state,
                 categories:action.payload
             }
-        case SELECT_GENRES:{
-            return{
-                ...state,
-                // selectGenre:(!state.selectGenre.includes(action.payload))?[...state.selectGenre,action.payload]:action.payload
-                selectGenre:action.payload
-            }
-        }
+        // case SELECT_GENRES:{
+        //     return{
+        //         ...state,
+        //         // selectGenre:(!state.selectGenre.includes(action.payload))?[...state.selectGenre,action.payload]:action.payload
+        //         selectGenre:action.payload
+        //     }
+        // }
         case  GET_VIDEOS:{
             return {
                 ...state,
@@ -56,6 +57,12 @@ const videoReducerFunc=(state,action)=>{
             return{
                 ...state,
                 category:action.payload
+            }
+        }
+        case SELECTED_GENRE:{
+            return {
+                ...state,
+                currentGenre:action.payload
             }
         }
         default:

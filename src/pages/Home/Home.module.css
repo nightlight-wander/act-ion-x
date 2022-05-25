@@ -97,7 +97,29 @@
     width: 100%;
     height: 3.5rem;
     /* overflow-x: scroll; */
+    /* min-height: 4.5rem;
+    overflow-x: scroll;
+    overflow-y: hidden; */
+    
 }
+
+.genreBtnActive{
+    color:var(--white);
+    border:1px solid var(--blackl1);
+    background-color:var(--light-red);
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px var(--purple-main);
+}
+
+.genreBtn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px var(--pink8);
+}
+
+
+/* .genreBtn{
+    max-height:4.5rem;
+} */
 
 /* .genreBtn:hover{
     background-color:var(--purple-main);

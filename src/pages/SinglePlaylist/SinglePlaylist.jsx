@@ -13,14 +13,14 @@ const SinglePlaylist = () => {
   const { eToken } = useAuth();
   const playListFound = playlists.find(item => item._id === playlistId)
   const playListVideos = playListFound?.videos;
-  console.log(playListFound)
-  console.log(playListVideos)
+  // console.log(playListFound)
+  // console.log(playListVideos)
   return (
     <>
       <Header />
       <div className={`${PlayListStyles["playlists-wrapper"]}`}>
         {playListVideos?.map((videoObj) =>
-          <div className={`${PlayListStyles["playlist-card"]}`}>
+          <div className={`${PlayListStyles["playlist-card"]}`} key={videoObj._id}>
             <div className={`${VideosStyles.videoWrapper}`}>
               <div className={`${VideosStyles.videoBackground}`}>
               <Link to={`/video/${videoObj._id}`}>

@@ -1,7 +1,7 @@
 import axios from "axios";
 import { GET_CATEGORIES,GET_VIDEOS } from "../utilities/actions-types";
 
-export const fetchVideosByCat = () => async (videoDispatch,category,selectGenre,isGenres) => {
+export const fetchVideosByCat = () => async (videoDispatch,category,selectGenre,isGenres,currentGenre) => {
     try {
         const getCategories = axios.get("/api/categories");
         const getVideos = axios.get("/api/videos");
@@ -12,7 +12,7 @@ export const fetchVideosByCat = () => async (videoDispatch,category,selectGenre,
             })
         })
         videoDispatch({type:GET_CATEGORIES,payload:categories})
-        const videosByGenre = [...videosByCat[category]].filter(videoObj => selectGenre.includes(videoObj.genreName))
+        const videosByGenre = [...videosByCat[category]].filter(videoObj => videoObj.genreName===currentGenre)
         isGenres === true ? videoDispatch({type:GET_VIDEOS,payload:videosByGenre}) :  videoDispatch({type:GET_VIDEOS,payload:videosByCat[category]})
     } catch (error) {
         console.log(error);

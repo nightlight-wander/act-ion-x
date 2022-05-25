@@ -8,18 +8,17 @@ import { fetchVideosByCat } from "../../services/videosCatsServices";
 import { VideoCard } from "../../components/VideoCard/VideoCard";
 
 const VideoListing = () => {
-  const { videoDispatch, videoStates: { category, selectGenre, isGenres, videos,videosByQuery } } = useVideos();
+  const { videoDispatch, videoStates: { category, selectGenre, isGenres, videos,videosByQuery,currentGenre} } = useVideos();
 
   useEffect(() => {
-    (fetchVideosByCat())(videoDispatch, category, selectGenre, isGenres);
-    // eslint-disable-next-line
-  }, [category, isGenres, selectGenre])
+    (fetchVideosByCat())(videoDispatch, category, selectGenre, isGenres,currentGenre);
+  }, [category, isGenres, selectGenre,videoDispatch,currentGenre])
 
   return (
     <>
       <Header />
       <div className={`${VideosStyles.videosWrapper}`}>
-        {(videosByQuery??videos).map((videoObj) => (
+        {videos&&(videosByQuery??videos).map((videoObj) => (
           <VideoCard key ={videoObj._id} videoObj={videoObj}
           />
         ))}
