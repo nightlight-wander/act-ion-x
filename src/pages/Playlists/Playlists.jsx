@@ -9,17 +9,17 @@ import { deletePlaylist } from "../../services/playListServices";
 const Playlists = () => {
   const { videoActStates: { playlists }, videoActDispatch } = useVideoActions();
   const { eToken } = useAuth();
-
+  // console.log(playlists)
   return (
     <div>
       <Header />
       <div className={`${PlayListStyles["playlists-wrapper"]}`}>
         {playlists && playlists.map((playListObj) => {
-          return (<div className={`${PlayListStyles["playlist-card"]}`}>
+          return (<div className={`${PlayListStyles["playlist-card"]}`} key={playListObj._id}>
             <Link to={`/playlists/${playListObj._id}`}>
               {/* {!(videos.length>0)?  */}
               <div className={`${PlayListStyles["empty-playlist"]}`}>
-                <span class="material-icons">
+                <span className="material-icons">
                   play_arrow
                 </span>
               </div>

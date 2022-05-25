@@ -1,21 +1,28 @@
 import React from 'react';
 import { useVideos } from '../../context/VideosContest';
 import HomeStyles from '../../pages/Home/Home.module.css';
-import { IS_GENRES_SET, SELECT_GENRES } from '../../utilities/actions-types';
+import { IS_GENRES_SET, SELECTED_GENRE,} from '../../utilities/actions-types';
 
 const GenreSlider = () => {
-  const { videoStates:{genres,selectGenre},videoDispatch} = useVideos();
+  const { videoStates:{genres,currentGenre},videoDispatch} = useVideos();
+
+  // console.log(selectGenre);
+  // console.log(genres);
+  // console.log(categories);
 
   const GenreHandler = (genreObj) => {
     const selectedGenre = genres.reduce((curTotal, curObj) => curObj.genreName === genreObj.genreName  ? genreObj.genreName : curTotal, "");
-    (!selectGenre.includes(selectedGenre))?videoDispatch({type:SELECT_GENRES,payload:[...selectGenre,selectedGenre]}):videoDispatch({type:SELECT_GENRES,payload:selectGenre})
+    videoDispatch({type:SELECTED_GENRE,payload:selectedGenre});
+    // (!selectGenre.includes(selectedGenre))?videoDispatch({type:SELECT_GENRES,payload:[...selectGenre,selectedGenre]}):videoDispatch({type:SELECT_GENRES,payload:selectGenre})
     videoDispatch({type:IS_GENRES_SET,payload:true});
   }
 
+  // console.log(currentGenre)
+
   return (
     <div className={`${HomeStyles.genreSlider} flex-center`}>
-      {genres.map(genreObj => {
-        return <button key={genreObj._id} className={`${HomeStyles.genreBtn}`} onClick={() => GenreHandler(genreObj)} >{genreObj.genreName} </button>
+      {genres&&genres.map(genreObj => {
+        return <button key={genreObj._id} className={`${HomeStyles.genreBtn} ${genreObj.genreName===currentGenre?HomeStyles.genreBtnActive:""}`} onClick={() => GenreHandler(genreObj)} >{genreObj.genreName} </button>
       })}
     </div>
   ) 

@@ -18,15 +18,17 @@ export function BottomNav() {
         videoDispatch({type:IS_GENRES_SET,payload:false});
     }
 
-    const removeCategories=()=>{
-      videoDispatch({type:GET_GENRES,payload:[]});
-    }
+    // const removeCategories=()=>{ 
+    //   videoDispatch({type:IS_GENRES_SET,payload:false});
+    //   videoDispatch({type:GET_GENRES,payload:null});
+    //   videoDispatch({type:SELECT_GENRES,payload:null});
+    // }
  
 
   return (
     <nav className={`${HomeStyles.actionsCat} flex-center`}>
         <Link to="/">
-        <button className={`${HomeStyles.actions} flex-col flex-vCenter`} onClick={()=>removeCategories()} >
+        <button className={`${HomeStyles.actions} flex-col flex-vCenter`} >
           <span className="material-icons">
             restart_alt
           </span>
