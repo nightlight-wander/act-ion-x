@@ -36,7 +36,7 @@
     width:87px;
     height:12px;
     border-radius:50%;
-    border:3px solid var(--pink4);
+    border:3px solid var(--purple-main-1);
 }
 
 .logo-name,.nucleo , .logo-icon , .logo-icon:before , .logo-icon:after{
@@ -66,10 +66,8 @@
 
 .logo-head{
     background: none;
-    margin-left: 4rem;
     position:relative;
-    top:0;
-    width:250px;
+    width:200px;
     height:110px;
 
     display: flex;
