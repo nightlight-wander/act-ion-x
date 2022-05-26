@@ -104,7 +104,7 @@
 
 .genreBtnActive{
     color:var(--white);
-    border:1px solid var(--blackl1);
+    border:2px solid var(--blackl1);
     background-color:var(--light-red);
     transform: translateY(-1px);
     box-shadow: 0 5px 10px var(--purple-main);

@@ -33,10 +33,10 @@
     position:absolute;
     /* top:2rem; */
     display:inline-block;
-    width:87px;
+    width:76px;
     height:12px;
     border-radius:50%;
-    border:3px solid var(--purple-main-1);
+    border:3px solid var(--dull-pink);
 }
 
 .logo-name,.nucleo , .logo-icon , .logo-icon:before , .logo-icon:after{
@@ -67,7 +67,7 @@
 .logo-head{
     background: none;
     position:relative;
-    width:200px;
+    width:150px;
     height:110px;
 
     display: flex;
