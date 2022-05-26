@@ -148,24 +148,28 @@
     margin-bottom: 1.5rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content:center;
+    padding-left:5rem;
     min-height: 5rem;
-    width: 30rem;
+    max-width: 30rem;
     background-color: var(--purple-main);
 
 }
 
 .playlist-title{
+    text-align:center;
     color: var(--yellowGold);
     font-size: 1.6rem;
     font-weight: 600;
-    cursor: pointer;
+    display:flex;
+    gap:1rem;
+    /* align-items:center; */
 }
 
-.playlist-title:hover{
-    color: var(--tomatoOrange);
+.playlist-handle{
+    cursor:pointer;
 }
+
 
 @media only screen and (max-width:1300px) {
 

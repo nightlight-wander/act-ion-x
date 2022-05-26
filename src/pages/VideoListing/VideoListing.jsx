@@ -6,29 +6,42 @@ import { useVideos } from "../../context/VideosContest";
 import VideosStyles from "./VideoListing.module.css";
 import { fetchVideosByCat } from "../../services/videosCatsServices";
 import { VideoCard } from "../../components/VideoCard/VideoCard";
+import { Loader } from "../../components/Loader/Loader";
 
 const VideoListing = () => {
-  const { videoDispatch, videoStates: { category, selectGenre, isGenres, videos,videosByQuery,currentGenre} } = useVideos();
+  const {
+    videoDispatch,
+    videoStates: {
+      category,
+      isGenres,
+      videos,
+      videosByQuery,
+      currentGenre,
+      loader,
+    },
+  } = useVideos();
 
   useEffect(() => {
-    (fetchVideosByCat())(videoDispatch, category, selectGenre, isGenres,currentGenre);
-  }, [category, isGenres, selectGenre,videoDispatch,currentGenre])
+    fetchVideosByCat()(videoDispatch, category, isGenres, currentGenre);
+  }, [category, isGenres, videoDispatch, currentGenre]);
 
   return (
     <>
       <Header />
       <div className={`${VideosStyles.videosWrapper}`}>
-        {videos&&(videosByQuery??videos).map((videoObj) => (
-          <VideoCard key ={videoObj._id} videoObj={videoObj}
-          />
-        ))}
+        {loader ? (
+          <Loader />
+        ) : (
+          videos &&
+          (videosByQuery ?? videos).map((videoObj) => (
+            <VideoCard key={videoObj._id} videoObj={videoObj} />
+          ))
+        )}
       </div>
       <GenreSlider />
       <BottomNav />
     </>
-
-  )
-}
+  );
+};
 
 export { VideoListing };
-

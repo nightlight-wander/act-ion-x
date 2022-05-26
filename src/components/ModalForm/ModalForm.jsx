@@ -10,7 +10,7 @@ const ModalForm = () => {
     const [playListName,setPlayListName]=useState("");
     const playlistCreate=(e)=>{
         e.preventDefault();
-        postPlaylists(playListName,videoActDispatch,eToken,setPlayListName);
+        playListName && postPlaylists(playListName,videoActDispatch,eToken,setPlayListName);
     }
     
   return (

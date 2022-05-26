@@ -2,7 +2,6 @@ import axios from "axios";
 import { WATCH_LATER } from "../utilities/actions-types";
 
 export const addToWatchLater=async(videoObj,eToken,videoActDispatch)=>{
-    console.log(videoObj)
   try{
       const response=await axios.post("/api/user/watchlater",{video:videoObj},{headers:{authorization:eToken}});
       console.log(response);
