@@ -1,7 +1,8 @@
 import axios from "axios";
-import { GET_CATEGORIES,GET_VIDEOS } from "../utilities/actions-types";
+import { GET_CATEGORIES,GET_VIDEOS, LOADER } from "../utilities/actions-types";
 
-export const fetchVideosByCat = () => async (videoDispatch,category,selectGenre,isGenres,currentGenre) => {
+export const fetchVideosByCat = () => async (videoDispatch,category,isGenres,currentGenre) => {
+    videoDispatch({type:LOADER,payload:true});
     try {
         const getCategories = axios.get("/api/categories");
         const getVideos = axios.get("/api/videos");
@@ -17,4 +18,5 @@ export const fetchVideosByCat = () => async (videoDispatch,category,selectGenre,
     } catch (error) {
         console.log(error);
     }
+    videoDispatch({type:LOADER,payload:false})
 } 
