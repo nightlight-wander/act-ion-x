@@ -18,13 +18,6 @@ export function BottomNav() {
         videoDispatch({type:IS_GENRES_SET,payload:false});
     }
 
-    // const removeCategories=()=>{ 
-    //   videoDispatch({type:IS_GENRES_SET,payload:false});
-    //   videoDispatch({type:GET_GENRES,payload:null});
-    //   videoDispatch({type:SELECT_GENRES,payload:null});
-    // }
- 
-
   return (
     <nav className={`${HomeStyles.actionsCat} flex-center`}>
         <Link to="/">
