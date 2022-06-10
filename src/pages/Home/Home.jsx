@@ -37,7 +37,7 @@ const Home = () => {
             <img src={catObj.catImg} className={`${HomeStyles.catImg}`} style={{ height: "220px", width: "220px", maxInlineSize: "100%", objectFit: "contain cover" }} alt={catObj.category}>
             </img>
           </div>
-
+ 
         }
         )}
       </section>
