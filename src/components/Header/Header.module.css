@@ -36,7 +36,7 @@
     width:76px;
     height:12px;
     border-radius:50%;
-    border:3px solid var(--dull-pink);
+    border:3px solid var(--purple-main-2);
 }
 
 .logo-name,.nucleo , .logo-icon , .logo-icon:before , .logo-icon:after{
