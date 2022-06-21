@@ -1,4 +1,5 @@
 import HomeStyles from "./Home.module.css";
+import { Link } from "react-router-dom";
 import { useVideos } from "../../context/VideosContest";
 import { BottomNav } from "../../components/BottomNav/BottomNav";
 import { GenreSlider } from "../../components/GenreSlider/GenreSlider";
@@ -34,10 +35,8 @@ const Home = () => {
       <section className={`${HomeStyles.catsWrapper} flex-center`} >
         {categories.map(catObj => {
           return <div key={catObj._id}>
-            <img src={catObj.catImg} className={`${HomeStyles.catImg}`} style={{ height: "220px", width: "220px", maxInlineSize: "100%", objectFit: "contain cover" }} alt={catObj.category}>
-            </img>
+            <Link to="/video-listing"><img src={catObj.catImg} className={`${HomeStyles.catImg}`} style={{ height: "220px", width: "220px", maxInlineSize: "100%", objectFit: "contain cover" }} alt={catObj.category}></img></Link>
           </div>
- 
         }
         )}
       </section>
