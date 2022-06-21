@@ -3,14 +3,14 @@
     border-radius: 6rem;
     margin-top: 2rem;
     color: var(--purple-main);
-    background-color: var(--yellowGold);
+    background-color: var(--purple-main-1);
     font-weight: 600;
     height: 3.5rem;
     width: 10rem;
     text-transform: uppercase;
 }
 .linkBtn:hover{
-    background-color: var(--yellowGold-tp);
+    background-color: var(--purple-main-2);
 }
 
 .linkBtn,.genreBtn{

@@ -28,7 +28,7 @@ const Home = () => {
     <div>
       <section className={HomeStyles.topSection}>
         <h1 className={`text-render`}>Fall asleep while listening to amazing stories.</h1>
-        <button className={`${HomeStyles.linkBtn}`}>Start</button>
+        <Link to="/video-listing"><button className={`${HomeStyles.linkBtn}`}>Start</button></Link>
       </section>
       <h2 className={`${HomeStyles.catsHeading} text-render`}>Dive into intensities of yourself</h2>
 
