@@ -41,8 +41,10 @@
     flex-direction: column;
     background-image:url("https://wallpaperaccess.com/full/1886928.jpg"
     );
+    background-image:url("https://images.hdqwalls.com/download/triangle-abstract-life-typography-5k-83-2560x1440.jpg");
     background-size: cover;
-    background-position-x: center;
+    background-position-y: center;
+    background-position-x:center;
 }
 
 .actionsCat{
