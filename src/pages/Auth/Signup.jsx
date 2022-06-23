@@ -7,16 +7,14 @@ import { createNewUser } from "../../services/authServices";
 
 const Signup = () => {
     const navigate=useNavigate();
-    const {user,setUser,seteToken,error,setError}=useAuth();
+    const {user,setUser,seteToken}=useAuth();
     const authSubmit=(e)=>{
         e.preventDefault();
         const newUserFormData=new FormData(e.target);
         const newUser=Object.fromEntries(newUserFormData.entries());
         if(newUser.email&&newUser.password&&newUser.userName!==""){
             setUser(()=>newUser);
-            setError(()=>"");
-        }else{
-            setError(()=>"please fill all fields")
+            // setError(()=>"");
         }
         
     };
@@ -59,7 +57,7 @@ const Signup = () => {
                                     visibility
                                 </span> */}
                         </div>
-                        {error && <div className={`${AuthStyles["error"]}`}>{error}</div>}
+                        {/* {error && <div className={`${AuthStyles["error"]}`}>{error}</div>} */}
                         <button className={`${AuthStyles["btn-primary"]} ${AuthStyles["login-btn"]} button flex-center`}>Sign Up</button>
                         {/* <button>submit</button> */}
                     </form>
