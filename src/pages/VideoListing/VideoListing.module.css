@@ -170,7 +170,7 @@
 
 .playlist-handle{
     cursor:pointer;
-}
+}  
 
 
 @media only screen and (max-width:1300px) {
@@ -183,7 +183,7 @@
         justify-self: start;
         color: var(--yellowGold);
         cursor: pointer;
-    }
+    } 
 
 }
 
