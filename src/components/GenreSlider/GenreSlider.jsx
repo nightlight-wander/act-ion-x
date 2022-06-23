@@ -17,7 +17,7 @@ const GenreSlider = () => {
       {genres&&genres.map(genreObj => {
         return <button key={genreObj._id} className={`${HomeStyles.genreBtn} ${genreObj.genreName===currentGenre?HomeStyles.genreBtnActive:""}`} onClick={() => GenreHandler(genreObj)} >{genreObj.genreName} </button>
       })}
-    </div>
+    </div> 
   ) 
 }
  

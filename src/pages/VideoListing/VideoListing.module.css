@@ -205,7 +205,7 @@
 
 @keyframes slidein {
     from {
-        margin-left: 100%;
+        margin-left: 50%;
       }
     
       to {
