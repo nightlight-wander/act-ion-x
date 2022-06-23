@@ -33,9 +33,9 @@ const VideoCard = ({ videoObj }) => {
                 <Link to={`/video/${videoObj._id}`}>
                     <img src={videoObj.thumbnail} alt={videoObj.title} className={`${VideosStyles.videoImg}`}></img>
                 </Link>
-                <span className={`${VideosStyles["play-icon-main"]} material-icons `}>
+                <Link to={`/video/${videoObj._id}`}><span className={`${VideosStyles["play-icon-main"]} material-icons `}>
                   play_arrow
-                </span>
+                </span></Link>
             </div>
             <div className={`${VideosStyles.videoTitle}`}><h2>{videoObj.title}</h2></div>
             <span className={`${VideosStyles.videoCreator}`}>{videoObj.creator}</span>
