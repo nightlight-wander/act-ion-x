@@ -3,7 +3,8 @@
     width: min(400px,70vw);
     height: min(60vh,200px);
     background-color: var(--purple-main);
-        background-image: radial-gradient( circle farthest-corner at 10.2% 55.8%,  rgba(252,37,103,1) 0%, rgba(250,38,151,1) 46.2%, rgba(186,8,181,1) 90.1% );
+    /* background-image: radial-gradient( circle farthest-corner at 10.2% 55.8%,  rgba(252,37,103,1) 0%, rgba(250,38,151,1) 46.2%, rgba(186,8,181,1) 90.1% ); */
+    background-image: linear-gradient( 106.9deg,  rgba(148,14,60,1) 60.9%, rgba(3,22,27,1) 122.3% );
     color: var(--yellowGold);
     
 }
@@ -48,5 +49,5 @@
 }
 
 .tabBtn:hover{
-    background-color: var(--purple-main);
+    background-color: var(--dark-red1);
 }

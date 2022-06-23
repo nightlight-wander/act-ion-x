@@ -1,23 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useVideos } from '../../context/VideosContest';
 import HomeStyles from '../../pages/Home/Home.module.css';
-import { IS_GENRES_SET, SELECTED_GENRE,} from '../../utilities/actions-types';
+import { IS_GENRES_SET, SELECTED_GENRE,SET_CATEGORY} from '../../utilities/actions-types';
 
 const GenreSlider = () => {
-  const { videoStates:{genres,currentGenre},videoDispatch} = useVideos();
-
-  // console.log(selectGenre);
-  // console.log(genres);
-  // console.log(categories);
+  const { videoStates:{genres,currentGenre,category},videoDispatch} = useVideos();
 
   const GenreHandler = (genreObj) => {
     const selectedGenre = genres.reduce((curTotal, curObj) => curObj.genreName === genreObj.genreName  ? genreObj.genreName : curTotal, "");
     videoDispatch({type:SELECTED_GENRE,payload:selectedGenre});
-    // (!selectGenre.includes(selectedGenre))?videoDispatch({type:SELECT_GENRES,payload:[...selectGenre,selectedGenre]}):videoDispatch({type:SELECT_GENRES,payload:selectGenre})
     videoDispatch({type:IS_GENRES_SET,payload:true});
   }
-
+ 
   // console.log(currentGenre)
+  // useEffect(()=>{
+  //   return(()=>{videoDispatch({ type: SET_CATEGORY, payload:""})})
+  // },[category])
 
   return (
     <div className={`${HomeStyles.genreSlider} flex-center`}>

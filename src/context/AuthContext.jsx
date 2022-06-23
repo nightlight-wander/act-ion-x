@@ -22,8 +22,9 @@ const AuthProvider=({children})=>{
     }
     const [user,setUser]=useState(readUser);
     const [eToken,seteToken]=useState(readToken);
+    const [error,setError]=useState("");
     return(
-        <AuthContext.Provider value={{user,setUser,eToken,seteToken}}>
+        <AuthContext.Provider value={{user,setUser,eToken,seteToken,error,setError}}>
             {children}
         </AuthContext.Provider>
     )
