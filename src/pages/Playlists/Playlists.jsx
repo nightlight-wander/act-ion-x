@@ -9,7 +9,7 @@ import { deletePlaylist } from "../../services/playListServices";
 const Playlists = () => {
   const { videoActStates: { playlists }, videoActDispatch } = useVideoActions();
   const { eToken } = useAuth();
-  // console.log(playlists)
+ 
   return (
     <div>
       <Header />
@@ -17,16 +17,20 @@ const Playlists = () => {
         {playlists && playlists.map((playListObj) => {
           return (<div className={`${PlayListStyles["playlist-card"]}`} key={playListObj._id}>
             <Link to={`/playlists/${playListObj._id}`}>
-              {/* {!(videos.length>0)?  */}
+              {(playListObj.videos?.length<1)?  
               <div className={`${PlayListStyles["empty-playlist"]}`}>
-                <span className="material-icons">
+                <span className={`${PlayListStyles["play-icon"]} material-icons `}>
                   play_arrow
                 </span>
+                <span className={`${PlayListStyles["playlist-count"]}`}>0</span>
               </div>
-
-              {/* :(<div>
-             <img src={videoPlayImg.thumbnail}></img>
-            </div>)} */}
+              :(<div className={`${PlayListStyles["empty-playlist"]}`}>
+             <img src={playListObj.videos[0]?.thumbnail} alt="playlist-video"></img>
+             <span className={`${PlayListStyles["play-icon"]} material-icons`}>
+                  play_arrow
+                </span>
+                <span className={`${PlayListStyles["playlist-count"]}`}>{playListObj.videos?.length}</span>
+            </div>)} 
             </Link>
             <div className={`${PlayListStyles["playlist-title"]}`}>{playListObj.title}
 

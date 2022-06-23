@@ -7,14 +7,13 @@ const useVideos=()=>useContext(VideosContext);
 const videoInitialStates={
     categories:[],
     genres:[],
-    // selectGenre:[],
     category:0,
     videos:[],
     videosByQuery:null,
     isGenres:false,
     currentGenre:"",
     loader:false,
-    toast:{text:"",mode:""},
+    toast:{text:"",mode:""}, 
 }
 
 const videoReducerFunc=(state,action)=>{
@@ -22,20 +21,13 @@ const videoReducerFunc=(state,action)=>{
         case LOADER:
             return{
                 ...state,
-                loader:action.payload
+                loader:action.payload 
             }
         case GET_CATEGORIES:
             return{
                 ...state,
                 categories:action.payload
             }
-        // case SELECT_GENRES:{
-        //     return{
-        //         ...state,
-        //         // selectGenre:(!state.selectGenre.includes(action.payload))?[...state.selectGenre,action.payload]:action.payload
-        //         selectGenre:action.payload
-        //     }
-        // }
         case  GET_VIDEOS:{
             return {
                 ...state,
@@ -72,21 +64,13 @@ const videoReducerFunc=(state,action)=>{
                 currentGenre:action.payload
             }
         }
-
         default:
             return state
-        
     }
 
 }
 
 const VideosProvider=({children})=>{
-    // const [categories,setCategories]=useState([]);
-    // const [genres,setGenres]=useState([]);
-    // const [selectGenre,setSelectGenre]=useState([]);
-    // const [category,setCategory]=useState(0);
-    // const [videos,setVideos]=useState([]);
-    // const [isGenres,setIsGenres]=useState(false);
     const [videoStates,videoDispatch]=useReducer(videoReducerFunc,videoInitialStates)
     return (
         <VideosContext.Provider value={{videoStates,videoDispatch}}>

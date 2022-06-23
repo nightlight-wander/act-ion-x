@@ -26,7 +26,6 @@ const PlayListsBox = ({ videoObj }) => {
           eToken,
           videoActDispatch
         );
-    // console.log(playlist);
   };
 
   return (

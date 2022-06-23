@@ -52,6 +52,7 @@
     --coralOrange:rgb(255,127,80);
     --yellowGold:rgb(255, 215, 0);
     --yellowGold-tp:rgb(255, 215, 0,50%);
+    --yellowGold-tp-1:rgb(255, 215, 0,30%);
   
   
     --pink1:#dbdcd7;
@@ -72,12 +73,21 @@
       inset 50px -50px 100px #2d2a3e;
 
       --background-text: -webkit-linear-gradient(#e7627d,#3d1635);
+      --background-text1: -webkit-linear-gradient(#ec4356,#f5f5f6);
       --background-clip-text:text ;
   
   }
 
   .text-render{
     background: var(--background-text);
+    background-clip: var(--background-clip-text);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color: transparent;
+
+  } 
+
+  .text-render1{
+    background: var(--background-text1);
     background-clip: var(--background-clip-text);
     -webkit-background-clip:text;
     -webkit-text-fill-color: transparent;

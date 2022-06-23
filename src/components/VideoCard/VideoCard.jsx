@@ -33,6 +33,9 @@ const VideoCard = ({ videoObj }) => {
                 <Link to={`/video/${videoObj._id}`}>
                     <img src={videoObj.thumbnail} alt={videoObj.title} className={`${VideosStyles.videoImg}`}></img>
                 </Link>
+                <span className={`${VideosStyles["play-icon-main"]} material-icons `}>
+                  play_arrow
+                </span>
             </div>
             <div className={`${VideosStyles.videoTitle}`}><h2>{videoObj.title}</h2></div>
             <span className={`${VideosStyles.videoCreator}`}>{videoObj.creator}</span>
@@ -47,10 +50,10 @@ const VideoCard = ({ videoObj }) => {
             </div>
            
         </div>
-        <PlaylistModal show={modal} close={() => setModal(false)} >
+        {modal && <PlaylistModal show={modal} close={() => setModal(false)} >
                     <ModalForm />
                     <PlayListsBox videoObj={videoObj} />
-        </PlaylistModal>
+        </PlaylistModal>}
         </>
     )
 }

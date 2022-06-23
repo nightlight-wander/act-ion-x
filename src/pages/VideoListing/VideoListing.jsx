@@ -23,6 +23,7 @@ const VideoListing = () => {
 
   useEffect(() => {
     fetchVideosByCat()(videoDispatch, category, isGenres, currentGenre);
+   
   }, [category, isGenres, videoDispatch, currentGenre]);
 
   return (
