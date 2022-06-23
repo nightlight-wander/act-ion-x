@@ -11,7 +11,7 @@ import HomeStyles from "./BottomNav.module.css";
 
 export function BottomNav() {
   const {
-    videoStates: { categories,category},
+    videoStates: { categories},
     videoDispatch,
   } = useVideos();
 

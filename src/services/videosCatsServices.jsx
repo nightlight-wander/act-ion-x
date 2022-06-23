@@ -1,5 +1,5 @@
 import axios from "axios";
-import { GET_CATEGORIES,GET_VIDEOS, LOADER, SET_CATEGORY } from "../utilities/actions-types";
+import { GET_CATEGORIES,GET_VIDEOS, LOADER} from "../utilities/actions-types";
 
 export const fetchVideosByCat = () => async (videoDispatch,category,isGenres,currentGenre) => {
     videoDispatch({type:LOADER,payload:true});
