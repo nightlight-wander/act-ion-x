@@ -22,7 +22,7 @@ const Profile = () => {
             <Tabs>
                 <div label="Profile">
                     <p>UserEmail: {user.email}</p>
-                    <p>UserName: {user?.userName}</p>
+                    {/* <p>UserName: {user?.userName}</p> */}
                 </div>
                 <div label="LogOut"><button className={`${TabStyles.tabBtn}`} onClick={() => logOutHandler()}>Log Out</button></div>
             </Tabs>

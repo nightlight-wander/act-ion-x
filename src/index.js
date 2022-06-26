@@ -7,6 +7,7 @@ import { makeServer } from "./server";
 import {AuthProvider} from "./context/AuthContext";
 import { VideosProvider } from "./context/VideosContest";
 import { VideoActionsProvider } from "./context/VideoActionsContext";
+// import { Toast } from "./components/Toast/Toast";
 
 // Call make Server
 makeServer();
@@ -21,6 +22,7 @@ ReactDOM.render(
         </VideosProvider>
         </VideoActionsProvider>
       </Router>
+      {/* <Toast/> */}
     </AuthProvider>
   </React.StrictMode>,
   document.getElementById("root")

@@ -1,44 +1,35 @@
-.tab-fullWrapper{
+.authForm-fullWrapper{
     padding: 5rem 0 5rem 0;
     margin:6rem auto;
-    width:min(600px,90vw);
+    width:min(500px,90vw);
 }
 
-.tab-wrapper{
+.authForm-wrapper{
     height: 100%;
     width: 100%;
-    background-color: var(--purple-main);
-    /* background-image: radial-gradient( circle farthest-corner at 10.2% 55.8%,  rgba(252,37,103,1) 0%, rgba(250,38,151,1) 46.2%, rgba(186,8,181,1) 90.1% ); */
-    background-image: linear-gradient( 106.9deg,  rgba(148,14,60,1) 60.9%, rgba(3,22,27,1) 122.3% );
-    color: var(--yellowGold);
-    
+    border:2px solid var(--blackl2);
+    border-radius:6px;
 }
 
-.tab-head{
+.auth-heading{
     width: 15rem;
     text-align: center;
-    border-bottom: 2px solid var(--gold1);
+    border-bottom: 2px solid var(--blackl2);
     font-size: 2rem;
     font-weight: 600;
     padding-bottom: 1rem;
-    color: var(--white); 
+    color: var(--pink5); 
     padding-top:2rem ;
     margin: auto;
 }
 
-.tab-head:hover{
+.auth-heading:hover{
     color: var(--tomatoOrange);
 }
 
 .input-wrapper{
     position: relative;
     padding: 4rem 4rem 1.2rem;
-}
-
-.error{
-    padding:0 20rem;
-    font-size: 1.8rem;
-    font-weight: 600;
 }
 
 /* .input-wrapper input{
@@ -52,13 +43,16 @@
 
 .input-wrapper .text-input{
     margin-bottom: 1.6rem;
-    border: none;
+    border: 2px solid var(--blackl2);
     outline-color: var(--purple-main);
     height: 3rem;
+
 }
 
 .input-wrapper .text-label{
     margin-bottom: 0.6rem;
+    color:var(--pink5);
+    font-weight:600;
 }
 
 .link-btn{
@@ -78,10 +72,10 @@
 }
 
 .sign-link a{
-    color: var(--yellowGold);
+    color: var(--pink5);
     font-size: 1.8rem;
     font-weight: 400;
-    border-bottom:1px solid var(--yellowGold) ;
+    border-bottom:1px solid var(--pink5) ;
    
 }
 
@@ -91,13 +85,6 @@
     right: 5rem;
     color: var(--yellowGold);
     cursor: pointer;
-}
-.eye-icon1{
-  position: absolute;
-  top: 54.5%;
-  right: 5rem;
-  color: var(--tomatoOrange);
-  cursor: pointer;
 }
 
 .login-btn ,.test-btn{
@@ -109,9 +96,9 @@
 
 .btn-primary{
     /* background-color: var(--purple-main); */
-    border: 2px solid var(--yellowGold);
+    border: 2px solid var(--pink5);
     border-radius: 0;
-    color: var(--gold1);
+    color: var(--pink5);
     font-size: 1.7rem;
     padding: 0.8rem 1.4rem;
     text-transform: capitalize;
@@ -125,5 +112,6 @@
 }
 
 .btn-primary:hover{
-    background-color: var(--purple-main-1);
+    background-color: var(--pink4);
+    color:var(--gold1);
 }

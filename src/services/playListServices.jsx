@@ -1,6 +1,16 @@
 import axios from "axios";
 import { UPDATE_CURPLAYLIST, PLAYLISTS } from "../utilities/actions-types";
 
+export const getPlaylists=async(eToken,videoActDispatch)=>{
+    try{
+        const response=await axios.get("/api/user/playlists",{headers:{authorization:eToken}});
+        console.log(response);
+        videoActDispatch({type:PLAYLISTS,payload:response.data.playlists})
+    }catch(error){
+        console.log(error);
+    }
+}
+
 export const postPlaylists=async(playListName,videoActDispatch,eToken,setPlayListName)=>{
   try{
       const response=await axios.post("/api/user/playlists",{
