@@ -1,5 +1,9 @@
-import { createContext, useContext, useReducer } from "react";
+import { createContext, useContext, useEffect, useReducer } from "react";
+import { getHistory } from "../services/historyServices";
+import { getPlaylists } from "../services/playListServices";
+import { getWatchLater } from "../services/watchLaterServices";
 import { UPDATE_CURPLAYLIST,  PLAYLISTS, WATCH_LATER, HISTORY} from "../utilities/actions-types";
+import { useAuth } from "./AuthContext";
 const VideoActionsContext = createContext();
 const useVideoActions = () => useContext(VideoActionsContext);
 
@@ -48,6 +52,15 @@ const videoActionsReducerFunc = (state, action) => {
 
 const VideoActionsProvider = ({ children }) => {
     const [videoActStates, videoActDispatch] = useReducer(videoActionsReducerFunc, intialStates);
+    const {eToken}=useAuth();
+
+    useEffect(()=>{
+        if(eToken){
+            getWatchLater(eToken,videoActDispatch);
+            getPlaylists(eToken,videoActDispatch);
+            getHistory(eToken,videoActDispatch);
+        }
+    },[eToken])
 
     return (
         <VideoActionsContext.Provider value={{ videoActStates, videoActDispatch }}>

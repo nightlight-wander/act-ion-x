@@ -18,3 +18,13 @@ export const removeFromHistory=async(videoObj,eToken,videoActDispatch)=>{
         console.log(error);
     }
 }
+
+export const getHistory=async(eToken,videoActDispatch)=>{
+    try{
+        const response=await axios.get("/api/user/history",{headers:{authorization:eToken}});
+        console.log(response);
+        videoActDispatch({type:HISTORY,payload:response.data.history})
+    }catch(error){
+        console.log(error);
+    }
+  }

@@ -2,19 +2,19 @@
     margin: 8rem auto 2rem;
     width: min(400px,70vw);
     height: min(60vh,200px);
-    background-color: var(--purple-main);
-    /* background-image: radial-gradient( circle farthest-corner at 10.2% 55.8%,  rgba(252,37,103,1) 0%, rgba(250,38,151,1) 46.2%, rgba(186,8,181,1) 90.1% ); */
-    background-image: linear-gradient( 106.9deg,  rgba(148,14,60,1) 60.9%, rgba(3,22,27,1) 122.3% );
-    color: var(--yellowGold);
+    /* color: var(--yellowGold); */
+    border:2px solid var(--blackl2);
+    border-radius:6px;
+    color:var(--pink5);
     
 }
 
 .tabs{
-    color: var(--white);
+    color: var(--pink5);
     list-style: none;
     display: flex;
     justify-content: space-around;
-    border-bottom: 2px solid var(--yellowGold);
+    border-bottom: 2px solid var(--purple-main);
     font-size: 1.8rem;
     font-weight: 600;
 }
@@ -26,28 +26,28 @@
 }
 
 .tab:hover{
-    color: var(--yellowGold);
+    color: var(--purple-main);
 }
 
 .tab.active{
-    color: var(--yellowGold);
+    color: var(--purple-main);
 }
 
 .tabsContent{
    font-size: 1.5rem;
    font-weight: 500;
    padding: 2rem ;
-   color: var(--yellowGold);
+   color: var(--purple-main);
 }
 
 .tabBtn{
-    color: var(--yellowGold);
+    color: var(--purple-main);
     font-weight: 500;
     font-size: 1.7rem;
-    border: 2px solid var(--yellowGold);
+    border: 2px solid var(--purple-main);
     border-radius: 0.2rem;
 }
 
 .tabBtn:hover{
-    background-color: var(--dark-red1);
+    background-color: var(--purple-main-2);
 }

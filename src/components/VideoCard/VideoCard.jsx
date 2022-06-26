@@ -37,8 +37,8 @@ const VideoCard = ({ videoObj }) => {
                   play_arrow
                 </span></Link>
             </div>
-            <div className={`${VideosStyles.videoTitle}`}><h2>{videoObj.title}</h2></div>
-            <span className={`${VideosStyles.videoCreator}`}>{videoObj.creator}</span>
+            <div className={`${VideosStyles.videoTitle} `}><h2>{videoObj.title}</h2></div>
+            <span className={`${VideosStyles.videoCreator} `}>{videoObj.creator}</span>
             <div className={`${VideosStyles.videoIcon}`}>
                 <span className={` ${isVideoFound(watchLater,videoObj) ? `${VideosStyles.activeIfNotFound}` : ""} material-icons material-icons-outlined `} onClick={(e) => onWatchLater(e, videoObj)}>
                     watch_later
