@@ -10,7 +10,7 @@ export const getTokenOnLogin=(navigate)=>async(user,seteToken,location)=>{
         if(response.status===200){
             localStorage.setItem("user",JSON.stringify(response.data.foundUser));
             localStorage.setItem("eToken",response.data.encodedToken);
-            seteToken(()=>response.data.encodedToken)
+            seteToken(()=>response.data.encodedToken);
             navigate(location?.state?.from?.pathname||"/",{replace:true})
         }
         else{

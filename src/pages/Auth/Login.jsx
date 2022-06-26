@@ -35,7 +35,7 @@ const Login = () => {
 
     const guestLogin=()=>{
         setUser(()=>({email: 'flyflow@gmail.com', password: 'paperplanes12',name:"Freeyay"}));
-        (getTokenOnLogin(navigate))(user,seteToken,location)
+        (getTokenOnLogin(navigate))({email: 'flyflow@gmail.com', password: 'paperplanes12',name:"Freeyay"},seteToken,location);
     }
 
     return (
