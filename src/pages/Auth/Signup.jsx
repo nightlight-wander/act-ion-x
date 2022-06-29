@@ -10,7 +10,7 @@ const Signup = () => {
     const {name,email,password,password2}=user??{};
     const authSubmit=(e)=>{
        e.preventDefault();
-        if(email!==""&&password!==""&&name!=="" && password===password2){
+        if(email!==undefined&&password!==undefined&&name!==undefined && password===password2){
             // setUser(()=>({name,email,password}));
             (createNewUser(seteToken,navigate))(user);
         }   

@@ -38,6 +38,8 @@ const Header = () => {
   const headLinkStyles=({isActive}) => ({
     color: isActive ? `var(--pink4)` : "",
     transform: isActive?`translateY(-3px)`:"",
+    backgroundColor:isActive?`var(--pink1)`:"",
+    // borderRadius: `70% 30% 90% 10% / 67% 56% 44% 33% `
   })
 
 
