@@ -154,10 +154,10 @@
     color: var(--purple-main);
 }
 
-.video-actions a .icon{
-    background-color: var(--purple-main-2);
-    border-radius: 100%;
-    padding: 1rem;
+.video-actions a {
+    /* background-color: var(--white1); */
+    border-radius: 0.2rem;
+    padding: 0.6rem;
 }
 
 .video-actions a:hover{
@@ -250,7 +250,6 @@
         font-size: 1.4rem;
         text-transform: uppercase;
         background-color: var(--purple-main);
-        background-image: radial-gradient( circle farthest-corner at 10.2% 55.8%,  rgba(252,37,103,1) 0%, rgba(250,38,151,1) 46.2%, rgba(186,8,181,1) 90.1% );
         transform: scale(1, 0);
         transform-origin: top;
         transition: transform 400ms ease-in-out;
