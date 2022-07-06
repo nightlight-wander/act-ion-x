@@ -216,14 +216,14 @@ export const videos = [
     thumbnail:"https://images.hdqwalls.com/download/hexa-polygon-soothing-lights-4k-cz-2560x1440.jpg",
   },
 
-  {
-    _id: "SWBTrswQ3UQ",
-    category: "Soundscapes",
-    genreName:"Stars",
-    title: "Tum Kyun Chale",
-    creator: "Lofi",
-    thumbnail:"https://images.hdqwalls.com/download/low-poly-red-3d-abstract-4k-yq-2560x1440.jpg",
-  },
+  // {
+  //   _id: "SWBTrswQ3UQ",
+  //   category: "Soundscapes",
+  //   genreName:"Stars",
+  //   title: "Tum Kyun Chale",
+  //   creator: "Lofi",
+  //   thumbnail:"https://images.hdqwalls.com/download/low-poly-red-3d-abstract-4k-yq-2560x1440.jpg",
+  // },
 
   {
     _id: "SMkLdYK-9IE",
